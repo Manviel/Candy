@@ -1,12 +1,20 @@
 header {
-  display: block;
-  height: 40px;
-  padding-left: 15px;
-  padding-top: 15px;
+  display: flex;
+  padding: 15px;
   font-size: 24px;
   border-bottom: 4px solid #ffa500;
   background-color: rgba(33, 33, 33, 0.5);
+}
+
+h4 {
   color: #fff;
+  margin: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .App {
@@ -15,8 +23,6 @@ header {
   flex-direction: column;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+.wrap {
+  flex-wrap: wrap;
 }

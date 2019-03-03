@@ -1,13 +1,14 @@
 import React from 'react';
 import './FileZone.css';
 
-const FileZone = ({ data, handleChange }) => (
-  <div className="file-zone">
-    <div className="file">
+const FileZone = ({ data, handleChange, getSynonyms }) => (
+  <div className="file-zone space">
+    <div className="file space">
       {data &&
         data.map((word, i) => (
           <span
             key={i}
+            onClick={getSynonyms}
             onDoubleClick={handleChange}
             dangerouslySetInnerHTML={{ __html: word + ' ' }}
           />

@@ -9,7 +9,8 @@ class App extends Component {
     super(props);
     this.state = {
       data: null,
-      word: null
+      word: null,
+      syn: null
     };
   }
 
@@ -19,15 +20,25 @@ class App extends Component {
     });
   }
 
+  getSynonyms = e => {
+    fetch(`https://api.datamuse.com/words?rel_syn=${e.target.innerText}`)
+      .then(response => response.json())
+      .then(json => this.setState({ syn: json }));
+  };
+
   handleChange = event => this.setState({ word: event.target.innerText });
 
   handleUpdateData = value => this.setState({ data: value });
 
   render() {
+    const { syn } = this.state;
     return (
       <div className="App">
         <header>
-          <span>Simple Text Editor</span>
+          <h4>Simple Text Editor</h4>
+          <div className="file space wrap">
+            {syn && syn.map(i => <span key={i.score}>{i.word} </span>)}
+          </div>
         </header>
         <main>
           <ControlPanel
@@ -36,7 +47,11 @@ class App extends Component {
             handleChange={this.handleChange}
             handleUpdateData={this.handleUpdateData}
           />
-          <FileZone data={this.state.data} handleChange={this.handleChange} />
+          <FileZone
+            data={this.state.data}
+            handleChange={this.handleChange}
+            getSynonyms={this.getSynonyms}
+          />
         </main>
       </div>
     );
