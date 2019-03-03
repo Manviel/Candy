@@ -24,6 +24,16 @@ class App extends Component {
     fetch(`https://api.datamuse.com/words?rel_syn=${e.target.innerText}`)
       .then(response => response.json())
       .then(json => this.setState({ syn: json }));
+
+    this.setState({ word: e.target.innerText });
+  };
+
+  replaceSynonym = e => {
+    const index = this.state.data.indexOf(this.state.word.replace(/\s/g, ''));
+    let items = [...this.state.data];
+
+    items[index] = e.target.innerText;
+    this.handleUpdateData(items);
   };
 
   handleChange = event => this.setState({ word: event.target.innerText });
@@ -37,7 +47,12 @@ class App extends Component {
         <header>
           <h4>Simple Text Editor</h4>
           <div className="file space wrap">
-            {syn && syn.map(i => <span key={i.score}>{i.word} </span>)}
+            {syn &&
+              syn.map((i, j) => (
+                <span key={j} onClick={this.replaceSynonym}>
+                  {i.word}{' '}
+                </span>
+              ))}
           </div>
         </header>
         <main>
@@ -47,11 +62,7 @@ class App extends Component {
             handleChange={this.handleChange}
             handleUpdateData={this.handleUpdateData}
           />
-          <FileZone
-            data={this.state.data}
-            handleChange={this.handleChange}
-            getSynonyms={this.getSynonyms}
-          />
+          <FileZone data={this.state.data} getSynonyms={this.getSynonyms} />
         </main>
       </div>
     );

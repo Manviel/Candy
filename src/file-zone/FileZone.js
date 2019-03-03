@@ -1,7 +1,7 @@
 import React from 'react';
 import './FileZone.css';
 
-const FileZone = ({ data, handleChange, getSynonyms }) => (
+const FileZone = ({ data, getSynonyms }) => (
   <div className="file-zone space">
     <div className="file space">
       {data &&
@@ -9,7 +9,6 @@ const FileZone = ({ data, handleChange, getSynonyms }) => (
           <span
             key={i}
             onClick={getSynonyms}
-            onDoubleClick={handleChange}
             dangerouslySetInnerHTML={{ __html: word + ' ' }}
           />
         ))}
