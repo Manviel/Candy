@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 
-const FileZone = ({ data, getSynonyms }) => {
+import { DataContext } from "../context";
+
+const FileZone = ({ getSynonyms }) => {
+  const { state } = useContext(DataContext);
+
   return (
     <article className="file-zone space">
       <div className="file space">
-        {data.map((word, i) => (
+        {state.data.map((word, i) => (
           <span
             key={i}
             onClick={getSynonyms}

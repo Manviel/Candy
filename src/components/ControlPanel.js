@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+
+import { DataContext } from "../context";
 
 const ControlPanel = props => {
+  const { state, dispatch } = useContext(DataContext);
+
   const renderMark = props => {
     switch (props) {
       case "bold":
@@ -21,30 +25,28 @@ const ControlPanel = props => {
   const onMarkClick = event => {
     props.setWord(props.word);
 
-    const index = props.data.indexOf(props.word.replace(/\s/g, ""));
+    const index = state.data.indexOf(props.word.replace(/\s/g, ""));
 
     const change = renderMark(event.target.innerText);
 
     if (index > -1) {
-      props.data[index] = `<${change.type}>${props.word}</${change.type}>`;
+      state.data[index] = `<${change.type}>${props.word}</${change.type}>`;
 
-      props.setData(props.data);
+      dispatch({ type: "update", payload: state.data });
     }
   };
 
   return (
     <article className="control-panel">
-      <div className="format-actions">
-        <button className="format-action" onClick={onMarkClick}>
-          bold
-        </button>
-        <button className="format-action" onClick={onMarkClick}>
-          italic
-        </button>
-        <button className="format-action" onClick={onMarkClick}>
-          underline
-        </button>
-      </div>
+      <button className="action" onClick={onMarkClick}>
+        bold
+      </button>
+      <button className="action" onClick={onMarkClick}>
+        italic
+      </button>
+      <button className="action" onClick={onMarkClick}>
+        underline
+      </button>
     </article>
   );
 };

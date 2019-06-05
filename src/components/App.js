@@ -1,18 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 import ControlPanel from "./ControlPanel";
 import FileZone from "./FileZone";
 
 import { getMockText } from "../text.service";
+import { DataContext } from "../context";
 
 const App = () => {
-  const [data, setData] = useState([]);
+  const { state, dispatch } = useContext(DataContext);
+
   const [word, setWord] = useState("");
   const [syn, setSynonim] = useState([]);
 
   useEffect(() => {
-    getMockText().then(result => setData(result.split(" ")));
-  }, []);
+    getMockText().then(result =>
+      dispatch({ type: "update", payload: result.split(" ") })
+    );
+  }, [dispatch]);
 
   const getSynonyms = e => {
     fetch(`https://api.datamuse.com/words?rel_syn=${e.target.innerText}`)
@@ -23,18 +27,18 @@ const App = () => {
   };
 
   const replaceSynonym = e => {
-    const index = data.indexOf(word.replace(/\s/g, ""));
-    let items = [...data];
+    const index = state.data.indexOf(word.replace(/\s/g, ""));
 
-    items[index] = e.target.innerText;
-    setData(items);
+    state.data[index] = e.target.innerText;
+
+    dispatch({ type: "update", payload: state.data });
   };
 
   return (
     <div className="app">
       <header>
         <h4>Simple Text Editor</h4>
-        <div className="file space wrap">
+        <div className="file action space">
           {syn.map((i, j) => (
             <span key={j} onClick={replaceSynonym}>
               {i.word}{" "}
@@ -42,13 +46,8 @@ const App = () => {
           ))}
         </div>
       </header>
-      <ControlPanel
-        data={data}
-        setData={setData}
-        word={word}
-        setWord={setWord}
-      />
-      <FileZone data={data} getSynonyms={getSynonyms} />
+      <ControlPanel word={word} setWord={setWord} />
+      <FileZone getSynonyms={getSynonyms} />
     </div>
   );
 };

@@ -30,22 +30,17 @@ h4 {
   flex-direction: column;
 }
 
-.wrap {
-  flex-wrap: wrap;
-}
-
 .control-panel {
   background-color: #fff;
   height: 25px;
   display: flex;
   align-items: center;
-  flex-direction: column;
+  justify-content: center;
   padding-top: 5px;
 }
 
-.format-actions {
-  width: 200px;
-  margin-right: 400px;
+.action {
+  margin: 0 5px;
 }
 
 .space {
@@ -64,5 +59,4 @@ h4 {
   width: 600px;
   background-color: #fff;
   border: 1px solid #e4dede;
-  margin: 0 5px;
 }
