@@ -38,13 +38,13 @@ const ControlPanel = props => {
 
   return (
     <article className="control-panel">
-      <button className="action" onClick={onMarkClick}>
+      <button className="font action" onClick={onMarkClick}>
         bold
       </button>
-      <button className="action" onClick={onMarkClick}>
+      <button className="font action" onClick={onMarkClick}>
         italic
       </button>
-      <button className="action" onClick={onMarkClick}>
+      <button className="font action" onClick={onMarkClick}>
         underline
       </button>
     </article>

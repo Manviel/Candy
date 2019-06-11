@@ -36,8 +36,8 @@ const App = () => {
 
   return (
     <div className="app">
-      <header>
-        <h4>Simple Text Editor</h4>
+      <header className="header">
+        <h1 className="font">Simple Text Editor</h1>
         <div className="file action space">
           {syn.map((i, j) => (
             <span key={j} onClick={replaceSynonym}>
