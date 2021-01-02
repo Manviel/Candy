@@ -1,19 +1,20 @@
-import React, { useContext } from "react";
+import React from "react";
 
-import { DataContext } from "../context";
-
-const FileZone = ({ getSynonyms }) => {
-  const { state } = useContext(DataContext);
-
+const FileZone = ({ data, id, getSynonyms }) => {
   return (
     <article className="file-zone space">
       <div className="file space">
-        {state.data.map((word, i) => (
+        {data.map((word, i) => (
           <span
             key={i}
+            id={i}
             onClick={getSynonyms}
-            dangerouslySetInnerHTML={{ __html: word + " " }}
-          />
+            className={
+              Number(id) === i ? word.mode.concat(" active") : word.mode
+            }
+          >
+            {word.text}
+          </span>
         ))}
       </div>
     </article>

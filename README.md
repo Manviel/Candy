@@ -12,7 +12,9 @@ Run `npm start` for a dev server.
 
 ## Notes
 
-- Text sample is given in `text.service.js`
+```
+npm install <packagename>@latest
+```
 
 ## Must have
 

@@ -2,38 +2,28 @@ import React, { useContext } from "react";
 
 import { DataContext } from "../context";
 
-const ControlPanel = props => {
+const ControlPanel = () => {
   const { state, dispatch } = useContext(DataContext);
 
-  const renderMark = props => {
-    switch (props) {
-      case "bold":
-        return <b>{props}</b>;
+  const onMarkClick = (event) => {
+    const id = state.id;
+    const query = document.getElementById(id);
+    const change = event.target.innerText;
 
-      case "italic":
-        return <i>{props}</i>;
-
-      case "underline":
-        return <u>{props}</u>;
-
-      default: {
-        return;
-      }
+    if (query.classList.contains(change)) {
+      query.classList.remove(change);
+    } else {
+      query.classList.add(change);
     }
-  };
 
-  const onMarkClick = event => {
-    props.setWord(props.word);
+    query.classList.remove("active");
 
-    const index = state.data.indexOf(props.word.replace(/\s/g, ""));
+    state.data[id] = {
+      ...state.data[id],
+      mode: query.classList.toString(),
+    };
 
-    const change = renderMark(event.target.innerText);
-
-    if (index > -1) {
-      state.data[index] = `<${change.type}>${props.word}</${change.type}>`;
-
-      dispatch({ type: "update", payload: state.data });
-    }
+    dispatch({ type: "update", payload: state.data });
   };
 
   return (

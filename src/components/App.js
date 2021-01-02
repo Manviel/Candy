@@ -1,35 +1,45 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 
 import ControlPanel from "./ControlPanel";
 import FileZone from "./FileZone";
 
-import { getMockText } from "../text.service";
+import { getDataMuse, getMuseWords } from "../services/text";
 import { DataContext } from "../context";
 
 const App = () => {
   const { state, dispatch } = useContext(DataContext);
 
-  const [word, setWord] = useState("");
-  const [syn, setSynonim] = useState([]);
-
   useEffect(() => {
-    getMockText().then(result =>
-      dispatch({ type: "update", payload: result.split(" ") })
-    );
+    getDataMuse().then((result) => {
+      const arr = result.message.split(" ").map((i) => ({
+        text: i,
+        mode: "default",
+      }));
+
+      dispatch({ type: "update", payload: arr });
+    });
   }, [dispatch]);
 
-  const getSynonyms = e => {
-    fetch(`https://api.datamuse.com/words?rel_syn=${e.target.innerText}`)
-      .then(response => response.json())
-      .then(json => setSynonim(json));
+  const getSynonyms = (e) => {
+    const query = e.target.innerText;
+    const index = e.target.getAttribute("id");
 
-    setWord(e.target.innerText);
+    getMuseWords(query).then((json) =>
+      dispatch({
+        type: "create",
+        payload: {
+          id: index,
+          syn: json,
+        },
+      })
+    );
   };
 
-  const replaceSynonym = e => {
-    const index = state.data.indexOf(word.replace(/\s/g, ""));
-
-    state.data[index] = e.target.innerText;
+  const replaceSynonym = (e) => {
+    state.data[state.id] = {
+      ...state.data[state.id],
+      text: e.target.innerText,
+    };
 
     dispatch({ type: "update", payload: state.data });
   };
@@ -38,16 +48,18 @@ const App = () => {
     <div className="app">
       <header className="header">
         <h1 className="font">Simple Text Editor</h1>
-        <div className="file action space">
-          {syn.map((i, j) => (
-            <span key={j} onClick={replaceSynonym}>
-              {i.word}{" "}
-            </span>
-          ))}
-        </div>
+        {state.syn.length > 0 && (
+          <div className="file action space">
+            {state.syn.map((i, j) => (
+              <span key={j} onClick={replaceSynonym}>
+                {i.word}
+              </span>
+            ))}
+          </div>
+        )}
       </header>
-      <ControlPanel word={word} setWord={setWord} />
-      <FileZone getSynonyms={getSynonyms} />
+      <ControlPanel />
+      <FileZone data={state.data} id={state.id} getSynonyms={getSynonyms} />
     </div>
   );
 };
