@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 
-import { DataContext } from "../context";
+import { DataContext } from "../libs/context";
 
 const ControlPanel = () => {
   const { state, dispatch } = useContext(DataContext);
@@ -27,7 +27,7 @@ const ControlPanel = () => {
   };
 
   return (
-    <article className="control-panel">
+    <section className="control-panel">
       <button className="font action" onClick={onMarkClick}>
         bold
       </button>
@@ -37,7 +37,7 @@ const ControlPanel = () => {
       <button className="font action" onClick={onMarkClick}>
         underline
       </button>
-    </article>
+    </section>
   );
 };
 

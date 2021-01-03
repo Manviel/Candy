@@ -2,7 +2,7 @@ html,
 body {
   margin: 0;
   height: 100%;
-  background: #f4f5f7;
+  background: #f9f8fd;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -17,20 +17,44 @@ span:hover {
   cursor: pointer;
 }
 
+a:not(:first-child) {
+  margin-left: 12px;
+}
+
+button.action:hover {
+  background: #99cfec;
+}
+
 .header {
   display: flex;
-  padding: 15px 15px 5px;
+  margin: 15px;
   justify-content: space-between;
   align-items: center;
 }
 
-.font {
+.font,
+.on {
   font-size: 24px;
+  text-decoration: none;
+  padding: 10px 12px;
+}
+
+.font {
+  color: #000;
+}
+
+.on {
+  border-radius: 8px;
+  color: #333;
+  background: rgba(51, 51, 51, 0.05);
 }
 
 .app {
-  display: flex;
   min-height: 100vh;
+}
+
+.column {
+  display: flex;
   flex-direction: column;
 }
 
@@ -38,7 +62,7 @@ span:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 0;
+  margin-bottom: 16px;
 }
 
 .action {
@@ -52,10 +76,6 @@ span:hover {
   cursor: pointer;
 }
 
-button.action:hover {
-  background: #99cfec;
-}
-
 .space {
   padding: 15px;
   flex-grow: 1;
@@ -63,8 +83,6 @@ button.action:hover {
 
 .file-zone {
   background-color: #f1f0f0;
-  display: flex;
-  flex-direction: column;
   align-items: center;
 }
 

@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-import { Store } from "./context";
+import { Store } from "./libs/context";
 
 import App from "./components/App";
 

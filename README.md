@@ -12,9 +12,7 @@ Run `npm start` for a dev server.
 
 ## Notes
 
-```
-npm install <packagename>@latest
-```
+Node JS [API Documentation](https://github.com/Manviel/Waffle)
 
 ## Must have
 
