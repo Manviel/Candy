@@ -9,16 +9,13 @@ body {
 span {
   padding: 1px 6px 2px 6px;
   display: inline-flex;
+  border-radius: 20px;
 }
 
 span:hover {
   background: #99cfec;
   border-radius: 20px;
   cursor: pointer;
-}
-
-a:not(:first-child) {
-  margin-left: 12px;
 }
 
 button.action:hover {
@@ -94,7 +91,10 @@ button.action:hover {
 
 .active {
   background: #e9e2f0;
-  border-radius: 20px;
+}
+
+.primary {
+  background: #d8ece8;
 }
 
 .bold {
@@ -107,4 +107,34 @@ button.action:hover {
 
 .underline {
   text-decoration: underline;
+}
+
+.form-control {
+  margin-bottom: 12px;
+}
+
+.btn,
+.link {
+  padding: 10px 16px 8px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn {
+  border: none;
+  font-size: 16px;
+}
+
+.link:hover,
+.btn:hover {
+  filter: contrast(0.8) brightness(1.15);
+}
+
+.link {
+  font-size: 14px;
+  text-decoration: none;
+  text-align: center;
+  color: inherit;
 }

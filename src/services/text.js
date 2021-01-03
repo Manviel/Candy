@@ -1,5 +1,5 @@
 export const getDataMuse = async () => {
-  const response = await fetch(`http://localhost:3080/`);
+  const response = await fetch(`${process.env.REACT_APP_API}/`);
 
   const json = await response.json();
 

@@ -2,9 +2,9 @@ import { Link, useLocation } from "wouter";
 
 import { useFormFields } from "../libs/form";
 
-import { loginUser } from "../services/auth";
+import { registerUser } from "../services/auth";
 
-const Login = () => {
+const Register = () => {
   const [fields, handleFieldChange] = useFormFields({
     username: "",
     password: "",
@@ -15,14 +15,12 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await loginUser(fields);
+    const res = await registerUser(fields);
 
     if (res.error) {
       console.error(res);
     } else {
-      sessionStorage.setItem("jwt", res.token);
-
-      setLocation("/customers");
+      setLocation("/login");
     }
   };
 
@@ -51,14 +49,14 @@ const Login = () => {
       </div>
 
       <div className="column">
-        <button className="btn primary form-control">Login</button>
+        <button className="btn primary form-control">Create account</button>
 
-        <Link href="/register" className="link active">
-          Don't have an account
+        <Link href="/login" className="link active">
+          Already have an account
         </Link>
       </div>
     </form>
   );
 };
 
-export default Login;
+export default Register;
