@@ -1,61 +1,55 @@
+import { useState } from "react";
 import { Link, useLocation } from "wouter";
 
-import { useFormFields } from "../libs/form";
+import { Form } from "react-final-form";
+
+import CustomField from "./CustomField";
 
 import { registerUser } from "../services/auth";
 
+import { authValidator } from "../libs/validator";
+
+import "../styles/form.css";
+
 const Register = () => {
-  const [fields, handleFieldChange] = useFormFields({
-    username: "",
-    password: "",
-  });
+  const [subErr, setSubErr] = useState();
 
   const [location, setLocation] = useLocation();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const res = await registerUser(fields);
+  const onSubmit = async (values) => {
+    const res = await registerUser(values);
 
     if (res.error) {
-      console.error(res);
+      setSubErr(res.error);
     } else {
       setLocation("/login");
     }
   };
 
   return (
-    <form className="file space" onSubmit={handleSubmit}>
-      <div className="column">
-        <label>username</label>
-        <input
-          type="text"
-          name="username"
-          className="form-control"
-          value={fields.username}
-          onChange={handleFieldChange}
-        />
-      </div>
+    <Form
+      onSubmit={onSubmit}
+      validate={authValidator}
+      render={({ handleSubmit, submitting }) => (
+        <form className="file space" onSubmit={handleSubmit}>
+          <CustomField name="username" type="text" label="Username" />
 
-      <div className="column">
-        <label>password</label>
-        <input
-          type="password"
-          name="password"
-          className="form-control"
-          value={fields.password}
-          onChange={handleFieldChange}
-        />
-      </div>
+          <CustomField name="password" type="password" label="Password" />
 
-      <div className="column">
-        <button className="btn primary form-control">Create account</button>
+          {subErr && <p className="form-error">{subErr}</p>}
 
-        <Link href="/login" className="link active">
-          Already have an account
-        </Link>
-      </div>
-    </form>
+          <div className="column">
+            <button className="btn primary form-group" disabled={submitting}>
+              Create account
+            </button>
+
+            <Link href="/login" className="link active">
+              Already have an account
+            </Link>
+          </div>
+        </form>
+      )}
+    />
   );
 };
 

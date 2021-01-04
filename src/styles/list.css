@@ -1,0 +1,18 @@
+.title {
+  font-size: 24px;
+  margin: 0 0 8px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 8px;
+  background: #fcf0ea;
+  margin-bottom: 8px;
+  padding: 12px;
+}
