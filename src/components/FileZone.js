@@ -1,12 +1,7 @@
-const FileZone = ({ data, id, getSynonyms }) => (
+const FileZone = ({ data, getSynonyms }) => (
   <div className="file space">
     {data.map((word, i) => (
-      <span
-        key={i}
-        id={i}
-        onClick={getSynonyms}
-        className={Number(id) === i ? word.mode.concat(" active") : word.mode}
-      >
+      <span key={i} id={i} onClick={getSynonyms}>
         {word.text}
       </span>
     ))}

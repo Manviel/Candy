@@ -1,14 +1,13 @@
 import { Route, useLocation } from "wouter";
 
 import Home from "./Home";
-import Header from "./Header";
 import Login from "./Login";
 import ActiveLink from "./ActiveLink";
 import Customers from "./Customers";
 import Register from "./Register";
 
 const App = () => {
-  const [location, setLocation] = useLocation();
+  const [setLocation] = useLocation();
 
   const jwt = sessionStorage.getItem("jwt");
 
@@ -29,8 +28,6 @@ const App = () => {
             <ActiveLink href="/login">Login</ActiveLink>
           )}
         </nav>
-
-        <Header />
 
         {jwt && (
           <button className="btn active" onClick={handleLogout}>

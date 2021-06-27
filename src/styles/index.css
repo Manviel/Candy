@@ -91,6 +91,7 @@ button.action:hover {
   max-width: 600px;
   background-color: #fff;
   border-radius: 20px;
+  width: 100%;
 }
 
 .active {
