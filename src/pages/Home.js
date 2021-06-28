@@ -8,6 +8,7 @@ import { getDataMuse, getMuseWords } from "../services/text";
 const Home = () => {
   const [state, setState] = useState({
     data: ["Start"],
+    mode: null,
   });
 
   useEffect(() => {
@@ -38,8 +39,8 @@ const Home = () => {
 
   return (
     <>
-      <ControlPanel />
-      <FileZone data={state.data} getSynonyms={getSynonyms} />
+      <ControlPanel state={state} setState={setState} />
+      <FileZone state={state} getSynonyms={getSynonyms} />
     </>
   );
 };
