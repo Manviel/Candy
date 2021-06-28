@@ -1,10 +1,11 @@
 import { Route, useLocation } from "wouter";
 
-import Home from "./Home";
-import Login from "./Login";
+import Home from "../pages/Home";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
+
 import ActiveLink from "./ActiveLink";
-import Customers from "./Customers";
-import Register from "./Register";
+import Customers from "../pages/Customers";
 
 const App = () => {
   const [setLocation] = useLocation();

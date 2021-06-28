@@ -2,14 +2,22 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 
 import App from "../components/App";
-import Login from "../components/Login";
+
+import Login from "../pages/Login";
 
 describe("App", () => {
-  it("renders link", () => {
+  it("displays a link", () => {
     const { getByText } = render(<App />);
     const linkElement = getByText(/Home/i);
 
     expect(linkElement).toBeInTheDocument();
+  });
+
+  it("async data loading", async () => {
+    render(<App />);
+
+    expect(screen.queryByText(/responsibility/i)).toBeNull();
+    expect(await screen.findByText(/responsibility/i)).toBeInTheDocument();
   });
 });
 

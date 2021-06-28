@@ -3,7 +3,7 @@ import { Link, useLocation } from "wouter";
 
 import { Form } from "react-final-form";
 
-import CustomField from "./CustomField";
+import CustomField from "../components/CustomField";
 
 import { loginUser } from "../services/auth";
 
@@ -14,7 +14,7 @@ import "../styles/form.css";
 const Login = () => {
   const [subErr, setSubErr] = useState();
 
-  const [location, setLocation] = useLocation();
+  const [setLocation] = useLocation();
 
   const onSubmit = async (values) => {
     const res = await loginUser(values);
