@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 
 import App from "../components/App";
 
@@ -15,5 +15,15 @@ describe("App", () => {
 
     expect(screen.queryByText(/responsibility/i)).toBeNull();
     expect(await screen.findByText(/responsibility/i)).toBeInTheDocument();
+  });
+
+  it("checkbox click", () => {
+    render(<App />);
+
+    const checkbox = screen.getByRole("checkbox");
+
+    expect(checkbox).not.toBeChecked();
+    fireEvent.click(checkbox);
+    expect(checkbox).toBeChecked();
   });
 });

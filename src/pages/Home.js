@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import FileZone from "../components/FileZone";
+import ControlPanel from "../components/ControlPanel";
 
 import { getDataMuse, getMuseWords } from "../services/text";
 
@@ -37,6 +38,7 @@ const Home = () => {
 
   return (
     <>
+      <ControlPanel />
       <FileZone data={state.data} getSynonyms={getSynonyms} />
     </>
   );

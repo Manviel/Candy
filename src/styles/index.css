@@ -59,9 +59,12 @@ button.action:hover {
   flex-direction: column;
 }
 
-.control-panel {
+.flex {
   display: flex;
   align-items: center;
+}
+
+.control-panel {
   justify-content: center;
   margin-bottom: 16px;
 }
@@ -112,4 +115,8 @@ button.action:hover {
 
 .underline {
   text-decoration: underline;
+}
+
+.action-label {
+  margin-left: 6px;
 }
