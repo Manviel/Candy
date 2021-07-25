@@ -8,13 +8,11 @@ import { useCustomerStore } from "../libs/store";
 import "../styles/list.css";
 
 const Customers = () => {
-  const jwt = sessionStorage.getItem("jwt");
+  const { state, dispatch } = useCustomerStore();
 
-  if (!jwt) return <Redirect to="/login" />;
+  if (!state.isLoggedIn) return <Redirect to="/login" />;
 
   const [page, setPage] = useState(0);
-
-  const { state, dispatch } = useCustomerStore();
 
   const customers = state.customers;
 
