@@ -21,12 +21,16 @@ const App = () => {
   return (
     <div className="column app">
       <header className="header">
-        <nav>
-          <ActiveLink href="/">Home</ActiveLink>
+        <nav data-testid="navbar">
+          <ActiveLink href="/" data-testid="home-link">
+            Home
+          </ActiveLink>
           {jwt ? (
             <ActiveLink href="/customers">Customers</ActiveLink>
           ) : (
-            <ActiveLink href="/login">Login</ActiveLink>
+            <ActiveLink href="/login" data-testid="login-link">
+              Login
+            </ActiveLink>
           )}
         </nav>
 

@@ -5,7 +5,9 @@ const ActiveLink = (props) => {
 
   return (
     <Link {...props}>
-      <a className={isActive ? "on" : "font"}>{props.children}</a>
+      <a {...props} className={isActive ? "on" : "font"}>
+        {props.children}
+      </a>
     </Link>
   );
 };
