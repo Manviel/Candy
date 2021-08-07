@@ -1,24 +1,26 @@
 import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { screen, fireEvent } from "@testing-library/react";
 
 import App from "../components/App";
 
+import { renderWithRedux } from "../libs/reducer";
+
 describe("App", () => {
   it("displays a link", () => {
-    render(<App />);
+    renderWithRedux(<App />);
 
     expect(screen.getByText(/Home/i)).toBeInTheDocument();
   });
 
   it("async data loading", async () => {
-    render(<App />);
+    renderWithRedux(<App />);
 
     expect(screen.queryByText(/responsibility/i)).toBeNull();
     expect(await screen.findByText(/responsibility/i)).toBeInTheDocument();
   });
 
   it("navigate to home", () => {
-    render(<App />);
+    renderWithRedux(<App />);
 
     const navBar = screen.getByTestId("navbar");
     const homeLink = screen.getByTestId("home-link");
@@ -27,7 +29,7 @@ describe("App", () => {
   });
 
   it("navigate to login", () => {
-    render(<App />);
+    renderWithRedux(<App />);
 
     fireEvent.click(screen.getByTestId("login-link"));
 

@@ -95,6 +95,7 @@ button.action:hover {
   background-color: #fff;
   border-radius: 20px;
   width: 100%;
+  margin-bottom: 10px;
 }
 
 .active {

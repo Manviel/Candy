@@ -6,6 +6,7 @@ import Register from "../pages/Register";
 
 import ActiveLink from "./ActiveLink";
 import Customers from "../pages/Customers";
+import TestRedux from "../pages/TestRedux";
 
 const App = () => {
   const [setLocation] = useLocation();
@@ -46,6 +47,7 @@ const App = () => {
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <Route path="/customers" component={Customers} />
+        <Route component={TestRedux} />
       </article>
     </div>
   );
