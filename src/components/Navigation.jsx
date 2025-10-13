@@ -1,5 +1,6 @@
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from '@radix-ui/react-navigation-menu';
 import { Button } from '@radix-ui/themes';
+import { Download } from 'lucide-react';
 
 const Navigation = () => {
   return (
@@ -27,7 +28,7 @@ const Navigation = () => {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <Button className="nav-button" variant="outline">
-            Play Now ⬇
+            Play Now <Download />
           </Button>
         </NavigationMenuItem>
         <NavigationMenuItem>

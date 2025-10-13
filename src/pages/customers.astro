@@ -1,26 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.jsx';
-import Crew from "../components/Crew";
+import Header from '../components/Header.jsx';
+import Crew from '../components/Crew';
 
 import '../styles/fortnite-crew.css';
 ---
 
-<Layout title="Fortnite Crew - Subscription">
-	<div class="fortnite-crew-page">
-		<header class="crew-header">
-			<div class="header-content">
-				<div class="logo">
-					<a href="/" class="logo-link">
-						<span class="logo-icon">⚔</span>
-					</a>
-				</div>
-				<Navigation client:load />
-			</div>
-		</header>
+<Layout title='Fortnite Crew - Subscription'>
+  <Header client:load />
 
-		<main class="crew-main">
-			<Crew client:load />
-		</main>
-	</div>
+  <Crew client:load />
 </Layout>
