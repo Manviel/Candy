@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ActiveLink from '../components/ActiveLink';
+import Home from '../components/Home';
+---
+
+<Layout title="Candy App">
+	<div class="column app">
+		<header class="header">
+			<nav data-testid="navbar">
+				<ActiveLink href="/" data-testid="home-link" client:load>
+					Home
+				</ActiveLink>
+
+				<ActiveLink href="/customers" client:load>Customers</ActiveLink>
+			</nav>
+		</header>
+
+		<article class="column file-zone space">
+			<Home client:load />
+		</article>
+	</div>
+</Layout>
+
+<style>
+	.column {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.app {
+		min-height: 100vh;
+	}
+
+	.header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1rem;
+		background: #fff;
+		box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	}
+
+	nav {
+		display: flex;
+		gap: 1rem;
+	}
+
+	.file-zone {
+		flex: 1;
+		padding: 2rem;
+	}
+
+	.space {
+		justify-content: center;
+		align-items: center;
+	}
+
+	.btn {
+		padding: 0.5rem 1rem;
+		background: #007bff;
+		color: white;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+
+	.btn.active {
+		background: #dc3545;
+	}
+
+	.font {
+		color: #6c757d;
+		text-decoration: none;
+	}
+
+	.on {
+		color: #007bff;
+		font-weight: bold;
+		text-decoration: none;
+	}
+</style>
