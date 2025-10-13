@@ -1,8 +1,8 @@
-/* Fortnite Crew Page Styles */
+/* Fortnite Crew Page Styles - Consistent with Home Page Design */
 .fortnite-crew-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #1a0000 0%, #4a0e2e 25%, #2d1b69 50%, #1a0033 75%, #000000 100%);
-  color: #ffffff;
+  background: var(--gray-1);
+  color: var(--gray-12);
   position: relative;
   overflow: hidden;
 }
@@ -14,10 +14,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image:
-    radial-gradient(circle at 20% 80%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(138, 43, 226, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(255, 20, 147, 0.05) 0%, transparent 50%);
+  background: linear-gradient(135deg, var(--gray-1) 0%, var(--gray-2) 50%, var(--gray-3) 100%);
   pointer-events: none;
   z-index: 1;
 }
@@ -26,9 +23,25 @@
   position: relative;
   z-index: 100;
   padding: 1rem 2rem;
-  background: rgba(0, 0, 0, 0.3);
+  background: var(--gray-3);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--gray-6);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.crew-header .logo-icon {
+  font-size: 2rem;
+  color: var(--orange-9);
+}
+
+.crew-header .nav-link {
+  color: var(--gray-12);
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+}
+
+.crew-header .nav-link:hover {
+  color: var(--orange-9);
 }
 
 .crew-main {
@@ -44,8 +57,7 @@
   right: 0;
   bottom: 0;
   background-image:
-    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="20" r="8" fill="rgba(255,107,53,0.03)"/><circle cx="90" cy="80" r="6" fill="rgba(138,43,226,0.03)"/></svg>');
-  background-size: 200px 200px;
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23ffffff" opacity="0.02"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
   pointer-events: none;
   z-index: 1;
 }
@@ -69,22 +81,19 @@
   text-transform: uppercase;
   letter-spacing: 4px;
   margin-bottom: 2rem;
-  background: linear-gradient(135deg, #ffffff 0%, #ff6b35 25%, #ffffff 50%, #8a2be2 75%, #ffffff 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+  color: var(--gray-12);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   animation: fortnite-glow 2s ease-in-out infinite alternate;
 }
 
 @keyframes fortnite-glow {
-  from { text-shadow: 0 0 20px rgba(255, 255, 255, 0.3); }
-  to { text-shadow: 0 0 40px rgba(255, 107, 53, 0.5), 0 0 50px rgba(138, 43, 226, 0.3); }
+  from { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); }
+  to { text-shadow: 2px 2px 8px var(--orange-9), 0 0 20px var(--orange-9); }
 }
 
 .crew-subtitle {
   font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-  color: #e0e0e0;
+  color: var(--gray-11);
   margin-bottom: 4rem;
   line-height: 1.4;
   max-width: 600px;
@@ -101,13 +110,14 @@
 
 .benefit-item {
   padding: 2.5rem;
-  background: rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--gray-3);
+  border: 1px solid var(--gray-7);
   border-radius: 15px;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .benefit-item::before {
@@ -117,32 +127,33 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(255, 107, 53, 0.05), rgba(138, 43, 226, 0.05));
+  background: linear-gradient(135deg, var(--orange-3), var(--orange-4));
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
 .benefit-item:hover {
-  transform: translateY(-10px);
-  border-color: rgba(255, 107, 53, 0.3);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+  border-color: var(--orange-8);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  background: var(--gray-2);
 }
 
 .benefit-item:hover::before {
-  opacity: 1;
+  opacity: 0.1;
 }
 
 .benefit-item h3 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #ffffff;
+  color: var(--gray-12);
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 .benefit-item p {
-  color: #cccccc;
+  color: var(--gray-11);
   line-height: 1.6;
   font-size: 1rem;
 }
@@ -150,33 +161,34 @@
 .subscription-cta {
   margin-top: 4rem;
   padding: 3rem;
-  background: rgba(255, 107, 53, 0.1);
-  border: 2px solid rgba(255, 107, 53, 0.3);
+  background: var(--orange-3);
+  border: 2px solid var(--orange-7);
   border-radius: 20px;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .cta-title {
   font-size: 2rem;
   font-weight: 900;
-  color: #ff6b35;
+  color: var(--orange-11);
   margin-bottom: 1rem;
   text-transform: uppercase;
 }
 
 .cta-subtitle {
   font-size: 1.2rem;
-  color: #ffffff;
+  color: var(--gray-12);
   margin-bottom: 2rem;
 }
 
 .cta-button {
   display: inline-block;
   padding: 1rem 3rem;
-  background: linear-gradient(135deg, #ff6b35, #ff8c42);
-  color: #ffffff;
+  background: var(--orange-9);
+  color: var(--orange-1);
   text-decoration: none;
   border-radius: 50px;
   font-weight: 700;
@@ -184,13 +196,15 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: all 0.3s ease;
-  box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+  box-shadow: 0 4px 14px 0 var(--orange-8);
+  border: 1px solid var(--orange-9);
 }
 
 .cta-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 30px rgba(255, 107, 53, 0.4);
-  background: linear-gradient(135deg, #ff8c42, #ffb366);
+  transform: translateY(-2px);
+  background: var(--orange-10);
+  box-shadow: 0 8px 25px 0 var(--orange-9);
+  border-color: var(--orange-10);
 }
 
 /* Fortnite Crew Mobile Responsiveness */
