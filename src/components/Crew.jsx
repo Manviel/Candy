@@ -15,7 +15,7 @@ const Crew = () => {
           </div>
           <div className="benefit-item">
             <h3>Battle Pass Included</h3>
-            <p>Automatic access to the current season's Battle Pass with all rewards and exclusive challenges</p>
+            <p>Automatic access to the current season&apos;s Battle Pass with all rewards and exclusive challenges</p>
           </div>
           <div className="benefit-item">
             <h3>1,000 V-Bucks Monthly</h3>
@@ -32,7 +32,7 @@ const Crew = () => {
           <p className="cta-subtitle">
             Starting at $11.99/month • Cancel anytime • Exclusive content every month
           </p>
-          <a href="#" className="cta-button">
+          <a href="/subscribe" className="cta-button">
             Subscribe Now
           </a>
         </div>
