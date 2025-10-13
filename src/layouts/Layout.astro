@@ -15,24 +15,33 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		<div id="root">
+			<slot />
+		</div>
 	</body>
 </html>
 
 <style>
+	@import "@radix-ui/themes/styles.css";
+
+	:root {
+		--color-background: #f9f8fd;
+	}
+
 	html,
 	body {
 		margin: 0;
 		height: 100%;
-		background: #f9f8fd;
-		font-family: Arial, Helvetica, sans-serif;
+		background: var(--color-background);
+		font-family: "Inter", sans-serif;
 	}
 
 	* {
 		margin: 0;
 	}
 
-	button:hover {
+	/* Custom button hover styles */
+	.btn:hover {
 		background: #99cfec;
 	}
 </style>
