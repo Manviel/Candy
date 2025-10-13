@@ -2,11 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.jsx';
 import Crew from "../components/Crew";
+
+import '../styles/fortnite-crew.css';
 ---
 
 <Layout title="Fortnite Crew - Subscription">
-	<div class="column app customers-page">
-		<header class="header">
+	<div class="fortnite-crew-page">
+		<header class="crew-header">
 			<div class="header-content">
 				<div class="logo">
 					<a href="/" class="logo-link">
@@ -17,127 +19,8 @@ import Crew from "../components/Crew";
 			</div>
 		</header>
 
-		<Crew client:load />
+		<main class="crew-main">
+			<Crew client:load />
+		</main>
 	</div>
 </Layout>
-
-<style>
-	/* Customers page theme using CSS variables */
-	:global(.customers-page) {
-		--color-background: #ffffff;
-		--color-text: #333333;
-		--color-accent: #ff6b35;
-		--color-surface: #f8f9fa;
-		--color-border: rgba(0,0,0,0.1);
-		--color-primary: #2c3e50;
-		--color-secondary: #7f8c8d;
-
-		background: var(--color-background);
-		color: var(--color-text);
-		min-height: 100vh;
-	}
-
-	:global(.customers-page .header) {
-		padding: 1rem 2rem;
-		background: var(--color-background);
-		box-shadow: 0 2px 4px var(--color-border);
-		position: sticky;
-		top: 0;
-		z-index: 100;
-	}
-
-	:global(.customers-page .header-content) {
-		max-width: 1200px;
-		margin: 0 auto;
-	}
-
-	:global(.customers-page .logo-icon) {
-		color: var(--color-accent);
-		font-size: 2rem;
-	}
-
-	:global(.customers-page .nav-link) {
-		color: var(--color-text);
-		font-size: 0.9rem;
-		padding: 0.5rem 0;
-	}
-
-	:global(.customers-page .nav-link:hover) {
-		color: var(--color-accent);
-	}
-
-	/* Fortnite Crew Section - Uses CSS variables */
-	.crew-section {
-		padding: 4rem 2rem;
-		background: var(--color-background);
-	}
-
-	.crew-container {
-		max-width: 800px;
-		margin: 0 auto;
-		text-align: center;
-	}
-
-	.crew-title {
-		font-size: clamp(2rem, 5vw, 3rem);
-		font-weight: 900;
-		margin-bottom: 1rem;
-		color: var(--color-primary);
-		text-transform: uppercase;
-		letter-spacing: 2px;
-	}
-
-	.crew-subtitle {
-		font-size: clamp(1rem, 2vw, 1.2rem);
-		color: var(--color-secondary);
-		margin-bottom: 3rem;
-		line-height: 1.6;
-	}
-
-	.crew-benefits {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		gap: 2rem;
-		margin-top: 2rem;
-	}
-
-	.benefit-item {
-		padding: 2rem;
-		background: var(--color-surface);
-		border-radius: 10px;
-		box-shadow: 0 4px 6px var(--color-border);
-		transition: transform 0.3s ease;
-	}
-
-	.benefit-item:hover {
-		transform: translateY(-5px);
-	}
-
-	.benefit-item h3 {
-		font-size: 1.5rem;
-		color: var(--color-primary);
-		margin-bottom: 1rem;
-	}
-
-	.benefit-item p {
-		color: var(--color-text);
-		line-height: 1.6;
-		opacity: 0.8;
-	}
-
-	/* Mobile responsiveness for customers page */
-	@media (max-width: 768px) {
-		:global(.customers-page .header) {
-			padding: 1rem;
-		}
-
-		.crew-section {
-			padding: 2rem 1rem;
-		}
-
-		.crew-benefits {
-			grid-template-columns: 1fr;
-			gap: 1.5rem;
-		}
-	}
-</style>

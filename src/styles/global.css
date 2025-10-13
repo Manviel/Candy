@@ -1,24 +1,5 @@
 @import "@radix-ui/themes/styles.css";
 
-/* CSS Custom Properties for theming - Default dark theme */
-:root {
-  --color-background: #1a1a1a;
-  --color-text: #ffffff;
-  --color-accent: #ff6b35;
-  --color-primary: #2d2d2d;
-  --color-surface: rgba(0, 0, 0, 0.3);
-  --color-border: rgba(255, 255, 255, 0.1);
-}
-
-/* Home Page Specific Variables */
-.home-page {
-  --color-background: #1a1a1a;
-  --color-text: #ffffff;
-  --color-accent: #ff6b35;
-  --color-surface: rgba(0, 0, 0, 0.5);
-  --color-border: rgba(255, 255, 255, 0.1);
-}
-
 /* Global reset and base styles */
 html,
 body {
@@ -72,10 +53,10 @@ body {
   flex-direction: column;
 }
 
-/* Home Page Styles - Using CSS Variables */
+/* Home Page Styles - Using Radix UI Variables */
 .home-page .header {
   padding: 1rem 2rem;
-  background: var(--color-surface);
+  background: var(--gray-3);
   backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
@@ -89,17 +70,17 @@ body {
 
 .home-page .logo-icon {
   font-size: 2rem;
-  color: var(--color-accent);
+  color: var(--orange-9);
 }
 
 .home-page .nav-link {
-  color: var(--color-text);
+  color: var(--gray-12);
   font-size: 0.9rem;
   padding: 0.5rem 0;
 }
 
 .home-page .nav-link:hover {
-  color: var(--color-accent);
+  color: var(--orange-9);
 }
 
 .nav-button {
@@ -107,9 +88,9 @@ body {
 }
 
 .merch-button {
-  background: var(--color-accent) !important;
-  color: white !important;
-  border-color: var(--color-accent) !important;
+  background: var(--orange-9);
+  color: white;
+  border-color: var(--orange-9);
 }
 
 .home-page .hero-section {
@@ -132,7 +113,7 @@ body {
   font-weight: 900;
   line-height: 0.9;
   margin-bottom: 2rem;
-  color: var(--color-text);
+  color: var(--gray-12);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   letter-spacing: -0.02em;
 }
@@ -141,13 +122,13 @@ body {
   font-size: clamp(1rem, 2.5vw, 1.5rem);
   font-weight: 300;
   line-height: 1.4;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--gray-11);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .home-page .footer {
   padding: 2rem;
-  background: var(--color-surface);
+  background: var(--gray-3);
   backdrop-filter: blur(10px);
 }
 
@@ -161,12 +142,12 @@ body {
 }
 
 .social-link {
-  color: var(--color-text);
+  color: var(--gray-12);
   font-size: 0.9rem;
   padding: 0.5rem 1rem;
   border-radius: 4px;
   transition: all 0.3s ease;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--gray-8);
 }
 
 .social-link:hover {
@@ -174,6 +155,8 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+
 
 /* Basic responsive utilities */
 @media (max-width: 768px) {
