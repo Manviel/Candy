@@ -1,12 +1,8 @@
 import { Route, useLocation } from "wouter";
 
-import Home from "../pages/Home";
-import Login from "../pages/Login";
-import Register from "../pages/Register";
-
-import ActiveLink from "./ActiveLink";
-import Customers from "../pages/Customers";
-import TestRedux from "../pages/TestRedux";
+import Home from "./pages/Home";
+import ActiveLink from "./components/ActiveLink";
+import Customers from "./pages/Customers";
 
 const App = () => {
   const [setLocation] = useLocation();
@@ -26,13 +22,8 @@ const App = () => {
           <ActiveLink href="/" data-testid="home-link">
             Home
           </ActiveLink>
-          {jwt ? (
-            <ActiveLink href="/customers">Customers</ActiveLink>
-          ) : (
-            <ActiveLink href="/login" data-testid="login-link">
-              Login
-            </ActiveLink>
-          )}
+          
+          <ActiveLink href="/customers">Customers</ActiveLink>
         </nav>
 
         {jwt && (
@@ -44,10 +35,7 @@ const App = () => {
 
       <article className="column file-zone space">
         <Route path="/" component={Home} />
-        <Route path="/login" component={Login} />
-        <Route path="/register" component={Register} />
         <Route path="/customers" component={Customers} />
-        <Route component={TestRedux} />
       </article>
     </div>
   );
