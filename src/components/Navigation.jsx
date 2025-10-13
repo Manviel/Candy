@@ -6,34 +6,34 @@ const Navigation = () => {
     <NavigationMenu>
       <NavigationMenuList className="nav-list">
         <NavigationMenuItem>
-          <NavigationMenuLink className="nav-link" href="#about">
-            Як стати Спартанцем
+          <NavigationMenuLink className="nav-link" href="#battle-pass">
+            Battle Pass
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuLink className="nav-link" href="#heroes">
-            Наші герої
+          <NavigationMenuLink className="nav-link" href="#item-shop">
+            Item Shop
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuLink className="nav-link" href="#faq">
-            FAQ
+          <NavigationMenuLink className="nav-link" href="#news">
+            News
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuLink className="nav-link" href="#contact">
-            Контакти
+          <NavigationMenuLink className="nav-link" href="#competitive">
+            Competitive
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <Button className="nav-button" variant="outline">
-            Приєднатись ⬇
+            Play Now ⬇
           </Button>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Button className="nav-button merch-button">
-            Мерч ⬇
-          </Button>
+          <NavigationMenuLink className="nav-link" href="/customers">
+            Crew
+          </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
