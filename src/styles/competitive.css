@@ -22,10 +22,6 @@
 
 /* Performance Label */
 .performance-label {
-  margin-bottom: 2rem;
-}
-
-.performance-label span {
   color: var(--color-primary);
   font-size: 1rem;
   font-weight: 500;
@@ -35,6 +31,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  margin-bottom: 2rem;
 }
 
 /* Main Title */

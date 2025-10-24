@@ -17,7 +17,7 @@ const Home = () => {
               <div className="iphone-camera-image">
                 <div className="iphone-camera-overlay">
                   <div className="iphone-silhouette">
-                    <div className="iphone-emoji">📱</div>
+                    <div className="iphone-emoji">🎮</div>
                   </div>
                 </div>
               </div>
@@ -25,9 +25,9 @@ const Home = () => {
           </div>
 
           <div className="hero-actions">
-            <button className="buy-button">Buy</button>
+            <button className="buy-button">Play Free</button>
             <div className="pricing">
-              <span className="pricing-text">From $1099 or $45.79/mo. for 24 mo.<sup>*</sup></span>
+              <span className="pricing-text">Free to play on all platforms. Battle Pass available.</span>
             </div>
           </div>
         </div>

@@ -7,7 +7,7 @@ const Competitive = () => {
         <div className="performance-content">
           {/* Competitive Label */}
           <div className="performance-label">
-            <span>Competitive</span>
+            Competitive
           </div>
 
           {/* Main Title */}

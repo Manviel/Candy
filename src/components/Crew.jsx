@@ -12,9 +12,9 @@ const Crew = () => {
       <main className="ios26-main">
         <div className="ios26-hero">
           <h1 className="ios26-title">
-            FORTNITEMARES <span className="title-accent">2025</span>
+            FORTNITE <span className="title-accent">CREW</span>
             <br />
-            Horror Icons Return
+            Premium Subscription
           </h1>
         </div>
 
@@ -23,12 +23,12 @@ const Crew = () => {
           <div className="feature-section liquid-glass">
             <div className="feature-visual">
               <div className="feature-silhouette liquid-silhouette">
-                <div className="liquid-emoji">💎</div>
+                <div className="liquid-emoji">👕</div>
               </div>
             </div>
             <div className="feature-content">
-              <h2>Liquid Glass.</h2>
-              <p>Enhanced visual effects in Fortnite bring your favorite characters to life with dynamic reflections and real-time adaptations. Experience horror icons with stunning 3D depth effects that respond to your every move.</p>
+              <h2>Exclusive Monthly Outfits</h2>
+              <p>Get brand new premium outfits delivered monthly, including skins, back bling, pickaxes, and emotes. Each month features unique themes and collaborations you can't get anywhere else.</p>
             </div>
           </div>
 
@@ -36,12 +36,12 @@ const Crew = () => {
           <div className="feature-section lock-screen">
             <div className="feature-visual">
               <div className="feature-silhouette lock-silhouette">
-                <div className="lock-emoji">🔒</div>
+                <div className="lock-emoji">💸</div>
               </div>
             </div>
             <div className="feature-content">
-              <h2>Dynamic Lock Screen.</h2>
-              <p>Fortnite's enhanced lock screen brings your favorite characters and moments to life with vibrant wallpapers and dynamic notifications. Every glance at your screen becomes an immersive experience.</p>
+              <h2>1,000 V-Bucks Monthly</h2>
+              <p>Receive 1,000 V-Bucks every month to spend in the Item Shop on your favorite cosmetics, emotes, or save them up for limited-time bundles and exclusive collaborations.</p>
             </div>
           </div>
 
@@ -49,12 +49,12 @@ const Crew = () => {
           <div className="feature-section call-screening">
             <div className="feature-visual">
               <div className="feature-silhouette call-silhouette">
-                <div className="call-emoji">🔔</div>
+                <div className="call-emoji">🎫</div>
               </div>
             </div>
             <div className="feature-content">
-              <h2>Smart Notifications.</h2>
-              <p>Fortnite's intelligent notification system filters and prioritizes your alerts, ensuring you never miss important squad invites or limited-time events while staying focused on the battle.</p>
+              <h2>Season Battle Pass Included</h2>
+              <p>Every season's Battle Pass is included with your Crew membership, giving you instant access to 100+ tiers of exclusive rewards, emotes, and V-Bucks as you level up.</p>
             </div>
           </div>
         </div>

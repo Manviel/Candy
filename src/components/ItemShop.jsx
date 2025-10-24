@@ -3,23 +3,23 @@ import SocialLinks from './SocialLinks';
 const shopItems = [
   {
     id: 1,
-    name: 'Huggy Wuggy',
+    name: 'Renegade Raider',
     price: 1500,
-    isNew: true,
+    isNew: false,
     gradient: 'blue-purple',
     type: 'outfit'
   },
   {
     id: 2,
-    name: 'GrabPack',
-    price: 300,
-    isNew: true,
+    name: 'Skull Trooper',
+    price: 1200,
+    isNew: false,
     gradient: 'red-orange',
-    type: 'backpack'
+    type: 'outfit'
   },
   {
     id: 3,
-    name: 'Slappy Sledge',
+    name: 'Rainbow Smash',
     price: 800,
     isNew: true,
     gradient: 'blue-cyan',
@@ -27,9 +27,9 @@ const shopItems = [
   },
   {
     id: 4,
-    name: 'Ready To Pop',
+    name: 'Fresh Emote',
     price: 400,
-    isNew: true,
+    isNew: false,
     gradient: 'purple-pink',
     type: 'emote'
   }
@@ -40,9 +40,6 @@ const ItemShop = () => {
     <div className="item-shop-container">
       {/* Shop Header */}
       <header className="shop-header">
-        <p className="epic-branding">
-          Powered by the Epic Games Store
-        </p>
         <h1 className="shop-title">ITEM SHOP</h1>
       </header>
 
@@ -50,7 +47,7 @@ const ItemShop = () => {
       <main className="shop-main">
         {/* Event Title */}
         <div className="event-title">
-          <h2>FORTNITEMARES</h2>
+          <h2>FORTNITEMARES 2025</h2>
         </div>
 
         {/* Featured Bundle */}
@@ -61,7 +58,7 @@ const ItemShop = () => {
               <div className="character-large"></div>
             </div>
             <div className="bundle-info">
-              <h3>Huggy Wuggy Bundle</h3>
+              <h3>Midnight Raven Bundle</h3>
               <div className="bundle-pricing">
                 <span className="vbucks-icon">V</span>
                 <span className="current-price">2,200</span>
@@ -102,7 +99,7 @@ const ItemShop = () => {
                 </div>
               </div>
               <div className="bundle-info">
-                <h3>Shaggy & Scooby-Doo Bundle</h3>
+                <h3>Original Heroes Bundle</h3>
                 <div className="bundle-pricing">
                   <span className="vbucks-icon">V</span>
                   <span className="current-price">3,400</span>
@@ -121,7 +118,7 @@ const ItemShop = () => {
                 </div>
               </div>
               <div className="bundle-info">
-                <h3>Mystery Inc. Bundle</h3>
+                <h3>Galaxy Bundle</h3>
                 <div className="bundle-pricing">
                   <span className="vbucks-icon">V</span>
                   <span className="current-price">3,800</span>
@@ -138,7 +135,7 @@ const ItemShop = () => {
                 </div>
               </div>
               <div className="bundle-info">
-                <h3>Mystery Machine Bundle</h3>
+                <h3>Battle Bus Bundle</h3>
                 <div className="bundle-pricing">
                   <span className="vbucks-icon">V</span>
                   <span className="current-price">2,000</span>
@@ -154,7 +151,7 @@ const ItemShop = () => {
                 </div>
               </div>
               <div className="bundle-info">
-                <h3>Simple Plan<br />What's New Scoob</h3>
+                <h3>Icon Series<br />Emote Bundle</h3>
                 <div className="bundle-pricing">
                   <span className="vbucks-icon">V</span>
                   <span className="current-price">500</span>
@@ -170,7 +167,7 @@ const ItemShop = () => {
                 </div>
               </div>
               <div className="bundle-info">
-                <h3>Green Ghost</h3>
+                <h3>Dark Series Bundle</h3>
                 <div className="bundle-pricing">
                   <span className="vbucks-icon">V</span>
                   <span className="current-price">1,200</span>

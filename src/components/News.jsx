@@ -3,15 +3,15 @@ import SocialLinks from './SocialLinks';
 const relatedArticles = [
   {
     id: 1,
-    date: 'SEP 19, 2025',
-    title: 'Look Out for #1 in Fortnite Delulu',
+    date: 'OCT 20, 2025',
+    title: 'Fortnite OG Returns - Classic Map is Back!',
     category: 'Battle Royale',
     gradient: 'rainbow'
   },
   {
     id: 2,
-    date: 'SEP 18, 2025',
-    title: 'Summon Megazord in Battle Royale v37.30',
+    date: 'OCT 15, 2025',
+    title: 'New Marvel Heroes Join the Battle Bus',
     category: 'Battle Royale',
     gradient: 'purple-blue'
   }
@@ -25,7 +25,7 @@ const News = () => {
         <div className="article-header">
           <div className="article-date">OCT 09, 2025</div>
           <h1 className="article-title">
-            Fortnitemares 2025: A Terrifying New Cast of Horror Icons
+            Fortnitemares 2025: Horror Icons Return to the Island
           </h1>
           <div className="article-categories">
             <span className="category-tag">Battle Royale</span>
@@ -64,19 +64,21 @@ const News = () => {
         <div className="article-content">
           <div className="article-text">
             <p>
-              Fear gets a new face. Meet the Mother of Thorns, Doja Cat, who's twisting Battle
-              Royale into her haunted kingdom and unleashing chaos with a wild cast of
-              characters. From Jason to Wednesday Addams to Scooby-Doo and Ghost Face, VIPs
-              of fright await.
+              Fear gets a new face in Fortnitemares 2025! The Cube Queen has returned to twist
+              the Island into her haunted domain, unleashing chaos with legendary horror-themed
+              outfits and weapons. From Skull Trooper to Shadow Midas to Raven, iconic dark
+              skins have returned to celebrate the spookiest season.
             </p>
 
             <p>
-              Step into the nightmare now 'til November 1!
+              Jump into the nightmare from now until November 1st and experience exclusive
+              Fortnitemares Quests with spooky rewards, haunted locations, and special
+              horror-themed weapons and items.
             </p>
 
             <p>
-              And watch as the horror spreads to Reload on October 10, where the all-new
-              Nitmare Island will debut.
+              The horror spreads to Reload on October 10th, where Nightmare Island makes
+              its terrifying debut with all-new challenges and rewards.
             </p>
           </div>
         </div>

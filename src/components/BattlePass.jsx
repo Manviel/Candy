@@ -45,14 +45,6 @@ const BattlePass = () => {
               </div>
             </div>
           </div>
-
-          {/* Battle Pass Button */}
-          <div className="design-actions">
-            <button className="compare-button">
-              View Battle Pass
-              <span className="plus-icon">+</span>
-            </button>
-          </div>
         </div>
       </main>
 
