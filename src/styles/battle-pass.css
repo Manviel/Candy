@@ -1,0 +1,254 @@
+/* Battle Pass / Design Page Styles */
+.battle-pass-container {
+  min-height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.design-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.design-content {
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Design Label */
+.design-label {
+  margin-bottom: 2rem;
+}
+
+.design-label span {
+  color: var(--color-primary);
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-hover));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Main Title */
+.design-title {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 3rem;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+/* Description */
+.design-description {
+  max-width: 600px;
+  margin: 0 auto 4rem auto;
+  text-align: center;
+}
+
+.design-description p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  font-weight: 300;
+  margin: 0;
+}
+
+/* Battle Pass Visual - Updated to match character-card pattern */
+.iphone-visual {
+  margin: 4rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.battle-pass-card {
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  width: 300px;
+  height: 200px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.battle-pass-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.battle-pass-image {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--pink-9) 0%, var(--amber-9) 50%, var(--amber-10) 100%);
+}
+
+.battle-pass-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bp-silhouette {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.tier-number {
+  font-size: 3rem;
+  font-weight: 900;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tier-rewards {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.reward-icon {
+  font-size: 1.5rem;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+}
+
+
+/* Design Actions */
+.design-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.compare-button {
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border-primary);
+  padding: 0.75rem 2rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.compare-button:hover {
+  background: var(--bg-secondary);
+  border-color: var(--border-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px var(--shadow-secondary);
+}
+
+.plus-icon {
+  font-size: 1.2rem;
+  font-weight: 300;
+  transition: transform 0.3s ease;
+}
+
+.compare-button:hover .plus-icon {
+  transform: rotate(90deg);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .design-section {
+    padding: 1rem;
+  }
+
+  .design-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+    margin-bottom: 2rem;
+  }
+
+  .design-description {
+    margin-bottom: 3rem;
+  }
+
+  .design-description p {
+    font-size: 1rem;
+  }
+
+  .iphone-visual {
+    height: 300px;
+    margin: 3rem 0;
+  }
+
+  .battle-pass-card {
+    width: 250px;
+    height: 160px;
+  }
+
+  .tier-number {
+    font-size: 2.5rem;
+  }
+
+  .reward-icon {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .design-section {
+    padding: 0.75rem;
+  }
+
+  .design-title {
+    font-size: clamp(1.5rem, 7vw, 2.5rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .design-description {
+    margin-bottom: 2rem;
+  }
+
+  .design-description p {
+    font-size: 0.95rem;
+  }
+
+  .iphone-visual {
+    height: 250px;
+    margin: 2rem 0;
+  }
+
+  .battle-pass-card {
+    width: 200px;
+    height: 130px;
+  }
+
+  .tier-number {
+    font-size: 2rem;
+  }
+
+  .reward-icon {
+    font-size: 1rem;
+  }
+
+  .compare-button {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}

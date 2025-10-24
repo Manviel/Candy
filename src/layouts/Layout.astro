@@ -1,6 +1,5 @@
 ---
 import { Theme } from '@radix-ui/themes';
-
 import '../styles/global.css';
 
 export interface Props {
@@ -11,7 +10,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang='uk'>
+<html lang='en-US'>
   <head>
     <meta charset='UTF-8' />
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
@@ -19,10 +18,16 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <div id='root'>
-      <Theme accentColor='orange' appearance='dark'>
+    <Theme
+      accentColor="orange"
+      appearance="dark"
+      grayColor="slate"
+      radius="medium"
+      scaling="100%"
+    >
+      <div id='root'>
         <slot />
-      </Theme>
-    </div>
+      </div>
+    </Theme>
   </body>
 </html>

@@ -1,0 +1,13 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.jsx';
+import ItemShop from '../components/ItemShop.jsx';
+
+import '../styles/item-shop.css';
+---
+
+<Layout title='Fortnite Item Shop - Fortnitemares' lang='en'>
+  <Header activeRoute="/item-shop" client:load />
+
+  <ItemShop client:load />
+</Layout>

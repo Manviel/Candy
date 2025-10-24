@@ -1,0 +1,419 @@
+/* Apple M5 Performance Page Styles */
+.competitive-container {
+  min-height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.performance-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.performance-content {
+  max-width: 1000px;
+  width: 100%;
+}
+
+/* Performance Label */
+.performance-label {
+  margin-bottom: 2rem;
+}
+
+.performance-label span {
+  color: var(--color-primary);
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-hover));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Main Title */
+.performance-title {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 3rem;
+  color: var(--text-primary);
+}
+
+.title-accent {
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-hover) 50%, var(--color-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 300;
+}
+
+/* Chip Visualization - Updated to match item-card pattern */
+.chip-visualization {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0;
+  width: 100%;
+}
+
+.chip-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 300px;
+  background: radial-gradient(ellipse at center,
+    rgba(79, 172, 254, 0.3) 0%,
+    rgba(0, 242, 254, 0.2) 30%,
+    rgba(3, 169, 244, 0.1) 50%,
+    transparent 70%);
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  filter: blur(20px);
+  animation: pulse 3s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+.m5-chip {
+  width: 320px;
+  height: 240px;
+  background: linear-gradient(135deg, var(--slate-9) 0%, var(--slate-7) 50%, var(--slate-8) 100%);
+  border-radius: 15px;
+  position: relative;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.chip-frame {
+  width: 320px;
+  height: 240px;
+  background: linear-gradient(135deg,
+    var(--bg-tertiary) 0%,
+    var(--bg-secondary) 25%,
+    var(--bg-tertiary) 50%,
+    var(--bg-primary) 75%,
+    var(--bg-tertiary) 100%);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  border: 1px solid var(--border-primary);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.chip-frame:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px var(--shadow-secondary);
+  border-color: var(--border-secondary);
+}
+
+.tournament-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+}
+
+.apple-logo-small {
+  width: 12px;
+  height: 16px;
+  fill: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.chip-label {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.chip-grid {
+  width: 320px;
+  height: 240px;
+  background: linear-gradient(135deg,
+    #1a1a1a 0%,
+    #2a2a2a 25%,
+    #1a1a1a 50%,
+    #0a0a0a 75%,
+    #1a1a1a 100%);
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.cpu-section,
+.gpu-section,
+.neural-section,
+.memory-section {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+}
+
+.cpu-section {
+  background: linear-gradient(135deg, rgba(79, 172, 254, 0.1), rgba(0, 242, 254, 0.05));
+  border-color: rgba(79, 172, 254, 0.3);
+}
+
+.gpu-section {
+  background: linear-gradient(135deg, rgba(67, 233, 123, 0.1), rgba(56, 249, 215, 0.05));
+  border-color: rgba(67, 233, 123, 0.3);
+}
+
+.neural-section {
+  background: linear-gradient(135deg, rgba(250, 112, 154, 0.1), rgba(254, 224, 64, 0.05));
+  border-color: rgba(250, 112, 154, 0.3);
+}
+
+.memory-section {
+  background: linear-gradient(135deg, rgba(168, 237, 234, 0.1), rgba(254, 214, 227, 0.05));
+  border-color: rgba(168, 237, 234, 0.3);
+}
+
+.cpu-cores,
+.gpu-cores,
+.neural-engine,
+.memory-blocks {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.cpu-cores {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.gpu-cores {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.neural-engine {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.memory-blocks {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.cpu-core,
+.gpu-core,
+.neural-core,
+.memory-block {
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  animation: corePulse 2s ease-in-out infinite alternate;
+}
+
+.cpu-core {
+  background: linear-gradient(135deg, var(--blue-9), var(--cyan-9));
+  box-shadow: 0 0 10px rgba(79, 172, 254, 0.5);
+}
+
+.gpu-core {
+  background: linear-gradient(135deg, var(--grass-9), var(--cyan-9));
+  box-shadow: 0 0 10px rgba(67, 233, 123, 0.5);
+}
+
+.neural-core {
+  background: linear-gradient(135deg, var(--pink-9), var(--amber-9));
+  box-shadow: 0 0 10px rgba(250, 112, 154, 0.5);
+  animation-delay: 0.5s;
+}
+
+.memory-block {
+  background: linear-gradient(135deg, var(--cyan-9), var(--pink-10));
+  box-shadow: 0 0 10px rgba(168, 237, 234, 0.5);
+  animation-delay: 1s;
+}
+
+@keyframes corePulse {
+  from {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+/* Performance Description */
+.performance-description {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.performance-description p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  font-weight: 300;
+  margin: 0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .performance-section {
+    padding: 1rem;
+  }
+
+  .performance-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+    margin-bottom: 2rem;
+  }
+
+  .chip-visualization {
+    margin: 2rem 0;
+  }
+
+  .chip-frame {
+    width: 280px;
+    height: 200px;
+    padding: 1rem;
+  }
+
+  .chip-grid {
+    width: 280px;
+    height: 200px;
+    padding: 1rem;
+  }
+
+  .chip-glow {
+    width: 350px;
+    height: 250px;
+  }
+
+  .chip-grid {
+    height: 100px;
+    gap: 0.5rem;
+  }
+
+  .cpu-cores,
+  .gpu-cores,
+  .neural-engine,
+  .memory-blocks {
+    padding: 0.3rem;
+    gap: 2px;
+  }
+
+  .cpu-core,
+  .gpu-core,
+  .neural-core,
+  .memory-block {
+    width: 6px;
+    height: 6px;
+  }
+
+  .performance-description {
+    max-width: 100%;
+  }
+
+  .performance-description p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .performance-section {
+    padding: 0.75rem;
+  }
+
+  .performance-title {
+    font-size: clamp(1.5rem, 7vw, 2.5rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .chip-visualization {
+    margin: 1.5rem 0;
+  }
+
+  .chip-frame {
+    width: 240px;
+    height: 160px;
+    padding: 0.75rem;
+  }
+
+  .chip-grid {
+    width: 240px;
+    height: 160px;
+    padding: 0.75rem;
+  }
+
+  .chip-glow {
+    width: 300px;
+    height: 200px;
+  }
+
+  .apple-logo-small {
+    width: 10px;
+    height: 14px;
+  }
+
+  .chip-label {
+    font-size: 1rem;
+  }
+
+  .chip-grid {
+    height: 80px;
+    gap: 0.3rem;
+  }
+
+  .cpu-section,
+  .gpu-section,
+  .neural-section,
+  .memory-section {
+    border-radius: 4px;
+  }
+
+  .cpu-core,
+  .gpu-core,
+  .neural-core,
+  .memory-block {
+    width: 4px;
+    height: 4px;
+  }
+
+  .performance-description p {
+    font-size: 0.95rem;
+  }
+}
