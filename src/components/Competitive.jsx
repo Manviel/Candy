@@ -16,50 +16,33 @@ const Competitive = () => {
           </h1>
 
           {/* Tournament Visualization */}
-          <div className="chip-visualization">
-            <div className="chip-frame">
-              <div className="tournament-icon">🏆</div>
-              <div className="chip-label">TOURNAMENTS</div>
+
+          <div className="chip-frame">
+            <div className="tournament-icon">🏆</div>
+            <div className="chip-label">TOURNAMENTS</div>
+          </div>
+          <div className="chip-grid">
+            <div className="bracket-section">
+              <div className="bracket-silhouette">🏟️</div>
             </div>
-            <div className="chip-grid">
-              <div className="cpu-section">
-                <div className="cpu-cores">
-                  {Array.from({ length: 8 }, (_, i) => (
-                    <div key={i} className="cpu-core"></div>
-                  ))}
-                </div>
-              </div>
-              <div className="gpu-section">
-                <div className="gpu-cores">
-                  {Array.from({ length: 6 }, (_, i) => (
-                    <div key={i} className="gpu-core"></div>
-                  ))}
-                </div>
-              </div>
-              <div className="neural-section">
-                <div className="neural-engine">
-                  <div className="neural-core"></div>
-                  <div className="neural-core"></div>
-                  <div className="neural-core"></div>
-                  <div className="neural-core"></div>
-                </div>
-              </div>
-              <div className="memory-section">
-                <div className="memory-blocks">
-                  {Array.from({ length: 4 }, (_, i) => (
-                    <div key={i} className="memory-block"></div>
-                  ))}
-                </div>
-              </div>
+            <div className="prize-section">
+              <div className="prize-silhouette">💎</div>
+            </div>
+            <div className="stats-section">
+              <div className="stats-silhouette">📊</div>
+            </div>
+            <div className="leaderboard-section">
+              <div className="leaderboard-silhouette">👑</div>
             </div>
           </div>
 
           {/* Competitive Description */}
           <div className="performance-description">
             <p>
-              Compete in Fortnite tournaments and climb the rankings to prove your skills.
-              From casual matches to professional esports events, there's a competitive mode
-              for every player. Track your progress, earn rewards, and become a legend.
+              Enter the arena and compete in epic Fortnite tournaments. Battle through brackets,
+              claim massive prize pools, and climb the leaderboards to prove your dominance. From
+              casual play to professional esports, every victory brings you closer to legendary
+              status.
             </p>
           </div>
         </div>

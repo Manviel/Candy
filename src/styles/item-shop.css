@@ -15,9 +15,10 @@
 }
 
 .epic-branding {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
   margin-bottom: 1rem;
 }
 
@@ -126,21 +127,6 @@
   left: 50%;
   transform: translateX(-50%);
   font-size: 2.5rem;
-}
-
-.items-row {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.item-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .bundle-info h3 {
@@ -562,10 +548,6 @@
 
   .bundle-info h3 {
     font-size: 1rem;
-  }
-
-  .promo-character::before {
-    font-size: 2rem;
   }
 }
 

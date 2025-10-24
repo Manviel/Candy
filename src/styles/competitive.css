@@ -47,7 +47,12 @@
 }
 
 .title-accent {
-  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-hover) 50%, var(--color-secondary) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-secondary) 0%,
+    var(--color-secondary-hover) 50%,
+    var(--color-secondary) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -64,54 +69,16 @@
   width: 100%;
 }
 
-.chip-glow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 400px;
-  height: 300px;
-  background: radial-gradient(ellipse at center,
-    rgba(79, 172, 254, 0.3) 0%,
-    rgba(0, 242, 254, 0.2) 30%,
-    rgba(3, 169, 244, 0.1) 50%,
-    transparent 70%);
-  transform: translate(-50%, -50%);
-  border-radius: 20px;
-  filter: blur(20px);
-  animation: pulse 3s ease-in-out infinite alternate;
-  z-index: -1;
-}
-
-@keyframes pulse {
-  from {
-    opacity: 0.6;
-    transform: translate(-50%, -50%) scale(1);
-  }
-  to {
-    opacity: 0.9;
-    transform: translate(-50%, -50%) scale(1.05);
-  }
-}
-
-.m5-chip {
-  width: 320px;
-  height: 240px;
-  background: linear-gradient(135deg, var(--slate-9) 0%, var(--slate-7) 50%, var(--slate-8) 100%);
-  border-radius: 15px;
-  position: relative;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
 .chip-frame {
-  width: 320px;
   height: 240px;
-  background: linear-gradient(135deg,
+  background: linear-gradient(
+    135deg,
     var(--bg-tertiary) 0%,
     var(--bg-secondary) 25%,
     var(--bg-tertiary) 50%,
     var(--bg-primary) 75%,
-    var(--bg-tertiary) 100%);
+    var(--bg-tertiary) 100%
+  );
   border-radius: 15px;
   display: flex;
   flex-direction: column;
@@ -137,13 +104,6 @@
   filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
 }
 
-.apple-logo-small {
-  width: 12px;
-  height: 16px;
-  fill: var(--text-secondary);
-  margin-bottom: 0.5rem;
-}
-
 .chip-label {
   font-size: 1.2rem;
   font-weight: 300;
@@ -153,127 +113,118 @@
 }
 
 .chip-grid {
-  width: 320px;
   height: 240px;
-  background: linear-gradient(135deg,
-    #1a1a1a 0%,
-    #2a2a2a 25%,
-    #1a1a1a 50%,
-    #0a0a0a 75%,
-    #1a1a1a 100%);
+  background: linear-gradient(
+    135deg,
+    var(--bg-tertiary) 0%,
+    var(--bg-secondary) 25%,
+    var(--bg-tertiary) 50%,
+    var(--bg-primary) 75%,
+    var(--bg-tertiary) 100%
+  );
   border-radius: 15px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 1rem;
   padding: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-primary);
+  backdrop-filter: blur(10px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
   position: relative;
+  margin: 2rem 0;
 }
 
-.cpu-section,
-.gpu-section,
-.neural-section,
-.memory-section {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.bracket-section,
+.prize-section,
+.stats-section,
+.leaderboard-section {
+  background: var(--bg-surface);
+  border-radius: 12px;
+  border: 1px solid var(--border-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  padding: 1rem;
 }
 
-.cpu-section {
-  background: linear-gradient(135deg, rgba(79, 172, 254, 0.1), rgba(0, 242, 254, 0.05));
-  border-color: rgba(79, 172, 254, 0.3);
+.bracket-section {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 193, 7, 0.05));
+  border-color: rgba(255, 215, 0, 0.3);
 }
 
-.gpu-section {
-  background: linear-gradient(135deg, rgba(67, 233, 123, 0.1), rgba(56, 249, 215, 0.05));
-  border-color: rgba(67, 233, 123, 0.3);
+.bracket-section:hover {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 193, 7, 0.1));
+  border-color: rgba(255, 215, 0, 0.5);
+  transform: translateY(-2px);
 }
 
-.neural-section {
-  background: linear-gradient(135deg, rgba(250, 112, 154, 0.1), rgba(254, 224, 64, 0.05));
-  border-color: rgba(250, 112, 154, 0.3);
+.prize-section {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(139, 92, 246, 0.05));
+  border-color: rgba(168, 85, 247, 0.3);
 }
 
-.memory-section {
-  background: linear-gradient(135deg, rgba(168, 237, 234, 0.1), rgba(254, 214, 227, 0.05));
-  border-color: rgba(168, 237, 234, 0.3);
+.prize-section:hover {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(139, 92, 246, 0.1));
+  border-color: rgba(168, 85, 247, 0.5);
+  transform: translateY(-2px);
 }
 
-.cpu-cores,
-.gpu-cores,
-.neural-engine,
-.memory-blocks {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 4px;
-  width: 100%;
-  padding: 0.5rem;
+.stats-section {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(22, 163, 74, 0.05));
+  border-color: rgba(34, 197, 94, 0.3);
 }
 
-.cpu-cores {
-  grid-template-columns: repeat(4, 1fr);
+.stats-section:hover {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(22, 163, 74, 0.1));
+  border-color: rgba(34, 197, 94, 0.5);
+  transform: translateY(-2px);
 }
 
-.gpu-cores {
-  grid-template-columns: repeat(3, 1fr);
+.leaderboard-section {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(220, 38, 38, 0.05));
+  border-color: rgba(239, 68, 68, 0.3);
 }
 
-.neural-engine {
-  grid-template-columns: repeat(2, 1fr);
+.leaderboard-section:hover {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.15), rgba(220, 38, 38, 0.1));
+  border-color: rgba(239, 68, 68, 0.5);
+  transform: translateY(-2px);
 }
 
-.memory-blocks {
-  grid-template-columns: repeat(2, 1fr);
+.bracket-silhouette,
+.prize-silhouette,
+.stats-silhouette,
+.leaderboard-silhouette {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.08) 30%,
+    rgba(255, 255, 255, 0.05) 70%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  border-radius: 50px 50px 30px 30px;
+  position: relative;
+  box-shadow: inset 0 0 25px rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  transition: all 0.3s ease;
 }
 
-.cpu-core,
-.gpu-core,
-.neural-core,
-.memory-block {
-  width: 8px;
-  height: 8px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 2px;
-  animation: corePulse 2s ease-in-out infinite alternate;
-}
-
-.cpu-core {
-  background: linear-gradient(135deg, var(--blue-9), var(--cyan-9));
-  box-shadow: 0 0 10px rgba(79, 172, 254, 0.5);
-}
-
-.gpu-core {
-  background: linear-gradient(135deg, var(--grass-9), var(--cyan-9));
-  box-shadow: 0 0 10px rgba(67, 233, 123, 0.5);
-}
-
-.neural-core {
-  background: linear-gradient(135deg, var(--pink-9), var(--amber-9));
-  box-shadow: 0 0 10px rgba(250, 112, 154, 0.5);
-  animation-delay: 0.5s;
-}
-
-.memory-block {
-  background: linear-gradient(135deg, var(--cyan-9), var(--pink-10));
-  box-shadow: 0 0 10px rgba(168, 237, 234, 0.5);
-  animation-delay: 1s;
-}
-
-@keyframes corePulse {
-  from {
-    opacity: 0.6;
-    transform: scale(1);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1.1);
-  }
+.bracket-section:hover .bracket-silhouette,
+.prize-section:hover .prize-silhouette,
+.stats-section:hover .stats-silhouette,
+.leaderboard-section:hover .leaderboard-silhouette {
+  transform: scale(1.1);
+  box-shadow: inset 0 0 35px rgba(255, 255, 255, 0.15);
 }
 
 /* Performance Description */
@@ -318,30 +269,27 @@
     padding: 1rem;
   }
 
-  .chip-glow {
-    width: 350px;
-    height: 250px;
-  }
-
   .chip-grid {
-    height: 100px;
-    gap: 0.5rem;
+    height: 180px;
+    gap: 0.75rem;
+    padding: 1rem;
   }
 
-  .cpu-cores,
-  .gpu-cores,
-  .neural-engine,
-  .memory-blocks {
-    padding: 0.3rem;
-    gap: 2px;
+  .bracket-section,
+  .prize-section,
+  .stats-section,
+  .leaderboard-section {
+    padding: 0.75rem;
   }
 
-  .cpu-core,
-  .gpu-core,
-  .neural-core,
-  .memory-block {
-    width: 6px;
-    height: 6px;
+  .bracket-silhouette,
+  .prize-silhouette,
+  .stats-silhouette,
+  .leaderboard-silhouette {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    border-radius: 40px 40px 25px 25px;
   }
 
   .performance-description {
@@ -379,38 +327,38 @@
     padding: 0.75rem;
   }
 
-  .chip-glow {
-    width: 300px;
-    height: 200px;
-  }
-
-  .apple-logo-small {
-    width: 10px;
-    height: 14px;
-  }
-
   .chip-label {
     font-size: 1rem;
   }
 
   .chip-grid {
-    height: 80px;
-    gap: 0.3rem;
+    height: 140px;
+    gap: 0.5rem;
+    padding: 0.75rem;
   }
 
-  .cpu-section,
-  .gpu-section,
-  .neural-section,
-  .memory-section {
-    border-radius: 4px;
+  .bracket-section,
+  .prize-section,
+  .stats-section,
+  .leaderboard-section {
+    border-radius: 8px;
   }
 
-  .cpu-core,
-  .gpu-core,
-  .neural-core,
-  .memory-block {
-    width: 4px;
-    height: 4px;
+  .bracket-section,
+  .prize-section,
+  .stats-section,
+  .leaderboard-section {
+    padding: 0.5rem;
+  }
+
+  .bracket-silhouette,
+  .prize-silhouette,
+  .stats-silhouette,
+  .leaderboard-silhouette {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    border-radius: 30px 30px 20px 20px;
   }
 
   .performance-description p {

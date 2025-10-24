@@ -40,10 +40,9 @@ const ItemShop = () => {
     <div className="item-shop-container">
       {/* Shop Header */}
       <header className="shop-header">
-        <div className="epic-branding">
-          <div className="epic-logo">EPIC</div>
-          <span className="epic-text">Powered by the Epic Games Store</span>
-        </div>
+        <p className="epic-branding">
+          Powered by the Epic Games Store
+        </p>
         <h1 className="shop-title">ITEM SHOP</h1>
       </header>
 
