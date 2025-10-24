@@ -1,0 +1,217 @@
+/* iOS 26 Page Styles */
+.ios26-container {
+  min-height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.ios26-header {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  z-index: 100;
+}
+
+.learn-more-link a {
+  color: var(--color-secondary);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.learn-more-link a:hover {
+  color: var(--color-secondary-hover);
+}
+
+.ios26-main {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.ios26-hero {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding-top: 2rem;
+}
+
+.ios26-title {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+.title-accent {
+  font-weight: 300;
+  font-style: italic;
+  color: var(--color-secondary);
+}
+
+.ios26-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.feature-section {
+  text-align: left;
+}
+
+.feature-visual {
+  height: 200px;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-silhouette {
+  width: 120px;
+  height: 150px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.08) 30%,
+    rgba(255, 255, 255, 0.05) 70%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  border-radius: 60px 60px 20px 20px;
+  position: relative;
+  box-shadow: inset 0 0 25px rgba(255, 255, 255, 0.1);
+}
+
+.liquid-emoji,
+.lock-emoji,
+.call-emoji {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+}
+
+.feature-content h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.feature-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  font-weight: 300;
+}
+
+/* Feature Section Backgrounds */
+.liquid-glass .feature-visual {
+  background: linear-gradient(135deg, var(--pink-9) 0%, var(--amber-9) 50%, var(--amber-10) 100%);
+}
+
+.lock-screen .feature-visual {
+  background: linear-gradient(135deg, var(--red-9) 0%, var(--orange-9) 50%, var(--red-10) 100%);
+}
+
+.call-screening .feature-visual {
+  background: linear-gradient(135deg, var(--blue-9) 0%, var(--blue-10) 50%, var(--blue-9) 100%);
+}
+
+
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+  .ios26-features {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .feature-visual {
+    height: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ios26-main {
+    padding: 1rem;
+  }
+
+  .ios26-features {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .feature-visual {
+    height: 150px;
+  }
+
+  .ios26-title {
+    font-size: clamp(1.5rem, 6vw, 3rem);
+  }
+
+  .feature-silhouette {
+    width: 100px;
+    height: 120px;
+  }
+
+  .liquid-emoji,
+  .lock-emoji,
+  .call-emoji {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ios26-header {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .learn-more-link a {
+    font-size: 1rem;
+  }
+
+  .ios26-main {
+    padding: 0.5rem;
+  }
+
+  .ios26-hero {
+    margin-bottom: 2rem;
+  }
+
+  .ios26-title {
+    font-size: clamp(1.2rem, 5vw, 2rem);
+  }
+
+  .feature-visual {
+    height: 120px;
+  }
+
+  .feature-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .feature-content p {
+    font-size: 0.9rem;
+  }
+
+  .feature-silhouette {
+    width: 80px;
+    height: 100px;
+  }
+
+  .liquid-emoji,
+  .lock-emoji,
+  .call-emoji {
+    font-size: 1.8rem;
+    top: 15px;
+  }
+
+}

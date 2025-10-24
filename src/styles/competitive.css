@@ -1,0 +1,364 @@
+/* Apple M5 Performance Page Styles */
+.competitive-container {
+  min-height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.performance-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.performance-content {
+  max-width: 1000px;
+  width: 100%;
+}
+
+/* Performance Label */
+.performance-label {
+  color: var(--color-primary);
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-hover));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 2rem;
+}
+
+/* Main Title */
+.performance-title {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 3rem;
+  color: var(--text-primary);
+}
+
+.title-accent {
+  background: linear-gradient(
+    135deg,
+    var(--color-secondary) 0%,
+    var(--color-secondary-hover) 50%,
+    var(--color-secondary) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 300;
+}
+
+/* Chip Visualization - Updated to match item-card pattern */
+.chip-visualization {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0;
+  width: 100%;
+}
+
+.chip-frame {
+  height: 240px;
+  background: linear-gradient(
+    135deg,
+    var(--bg-tertiary) 0%,
+    var(--bg-secondary) 25%,
+    var(--bg-tertiary) 50%,
+    var(--bg-primary) 75%,
+    var(--bg-tertiary) 100%
+  );
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  border: 1px solid var(--border-primary);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.chip-frame:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px var(--shadow-secondary);
+  border-color: var(--border-secondary);
+}
+
+.tournament-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+}
+
+.chip-label {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.chip-grid {
+  height: 240px;
+  background: linear-gradient(
+    135deg,
+    var(--bg-tertiary) 0%,
+    var(--bg-secondary) 25%,
+    var(--bg-tertiary) 50%,
+    var(--bg-primary) 75%,
+    var(--bg-tertiary) 100%
+  );
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border-primary);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  position: relative;
+  margin: 2rem 0;
+}
+
+.bracket-section,
+.prize-section,
+.stats-section,
+.leaderboard-section {
+  background: var(--bg-surface);
+  border-radius: 12px;
+  border: 1px solid var(--border-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.bracket-section {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 193, 7, 0.05));
+  border-color: rgba(255, 215, 0, 0.3);
+}
+
+.bracket-section:hover {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 193, 7, 0.1));
+  border-color: rgba(255, 215, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+.prize-section {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(139, 92, 246, 0.05));
+  border-color: rgba(168, 85, 247, 0.3);
+}
+
+.prize-section:hover {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(139, 92, 246, 0.1));
+  border-color: rgba(168, 85, 247, 0.5);
+  transform: translateY(-2px);
+}
+
+.stats-section {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(22, 163, 74, 0.05));
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.stats-section:hover {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(22, 163, 74, 0.1));
+  border-color: rgba(34, 197, 94, 0.5);
+  transform: translateY(-2px);
+}
+
+.leaderboard-section {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(220, 38, 38, 0.05));
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.leaderboard-section:hover {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.15), rgba(220, 38, 38, 0.1));
+  border-color: rgba(239, 68, 68, 0.5);
+  transform: translateY(-2px);
+}
+
+.bracket-silhouette,
+.prize-silhouette,
+.stats-silhouette,
+.leaderboard-silhouette {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.08) 30%,
+    rgba(255, 255, 255, 0.05) 70%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  border-radius: 50px 50px 30px 30px;
+  position: relative;
+  box-shadow: inset 0 0 25px rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  transition: all 0.3s ease;
+}
+
+.bracket-section:hover .bracket-silhouette,
+.prize-section:hover .prize-silhouette,
+.stats-section:hover .stats-silhouette,
+.leaderboard-section:hover .leaderboard-silhouette {
+  transform: scale(1.1);
+  box-shadow: inset 0 0 35px rgba(255, 255, 255, 0.15);
+}
+
+/* Performance Description */
+.performance-description {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.performance-description p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  font-weight: 300;
+  margin: 0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .performance-section {
+    padding: 1rem;
+  }
+
+  .performance-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+    margin-bottom: 2rem;
+  }
+
+  .chip-visualization {
+    margin: 2rem 0;
+  }
+
+  .chip-frame {
+    width: 280px;
+    height: 200px;
+    padding: 1rem;
+  }
+
+  .chip-grid {
+    width: 280px;
+    height: 200px;
+    padding: 1rem;
+  }
+
+  .chip-grid {
+    height: 180px;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .bracket-section,
+  .prize-section,
+  .stats-section,
+  .leaderboard-section {
+    padding: 0.75rem;
+  }
+
+  .bracket-silhouette,
+  .prize-silhouette,
+  .stats-silhouette,
+  .leaderboard-silhouette {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    border-radius: 40px 40px 25px 25px;
+  }
+
+  .performance-description {
+    max-width: 100%;
+  }
+
+  .performance-description p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .performance-section {
+    padding: 0.75rem;
+  }
+
+  .performance-title {
+    font-size: clamp(1.5rem, 7vw, 2.5rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .chip-visualization {
+    margin: 1.5rem 0;
+  }
+
+  .chip-frame {
+    width: 240px;
+    height: 160px;
+    padding: 0.75rem;
+  }
+
+  .chip-grid {
+    width: 240px;
+    height: 160px;
+    padding: 0.75rem;
+  }
+
+  .chip-label {
+    font-size: 1rem;
+  }
+
+  .chip-grid {
+    height: 140px;
+    gap: 0.5rem;
+    padding: 0.75rem;
+  }
+
+  .bracket-section,
+  .prize-section,
+  .stats-section,
+  .leaderboard-section {
+    border-radius: 8px;
+  }
+
+  .bracket-section,
+  .prize-section,
+  .stats-section,
+  .leaderboard-section {
+    padding: 0.5rem;
+  }
+
+  .bracket-silhouette,
+  .prize-silhouette,
+  .stats-silhouette,
+  .leaderboard-silhouette {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    border-radius: 30px 30px 20px 20px;
+  }
+
+  .performance-description p {
+    font-size: 0.95rem;
+  }
+}

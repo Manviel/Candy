@@ -1,0 +1,540 @@
+@import '@radix-ui/themes/styles.css';
+
+/* Global reset and base styles */
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+* {
+  margin: 0;
+}
+
+/* Shared layout utilities */
+.logo-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.logo-link:hover {
+  opacity: 0.8;
+}
+
+.nav-link {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Home Page Styles - Core to the application */
+.home-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Legacy styles removed - now using Apple navigation */
+
+/* Unified Design System using Radix UI */
+:root {
+  /* Primary brand colors */
+  --color-primary: var(--orange-9);
+  --color-primary-hover: var(--orange-10);
+  --color-primary-light: var(--orange-6);
+
+  /* Secondary accent colors */
+  --color-secondary: var(--blue-9);
+  --color-secondary-hover: var(--blue-10);
+  --color-secondary-light: var(--blue-6);
+
+  /* Success colors */
+  --color-success: var(--green-9);
+  --color-success-light: var(--green-6);
+
+  /* Warning colors */
+  --color-warning: var(--amber-9);
+  --color-warning-light: var(--amber-6);
+
+  /* Background colors */
+  --bg-primary: var(--slate-1);
+  --bg-secondary: var(--slate-2);
+  --bg-tertiary: var(--slate-3);
+  --bg-surface: rgba(255, 255, 255, 0.05);
+
+  /* Text colors */
+  --text-primary: var(--slate-12);
+  --text-secondary: var(--slate-11);
+  --text-muted: var(--slate-9);
+
+  /* Border colors */
+  --border-primary: var(--slate-6);
+  --border-secondary: var(--slate-7);
+  --border-focus: var(--orange-8);
+
+  /* Shadow colors */
+  --shadow-primary: rgba(0, 0, 0, 0.1);
+  --shadow-secondary: rgba(0, 0, 0, 0.2);
+  --shadow-glow: rgba(255, 107, 53, 0.3);
+}
+
+/* Fortnite Navigation */
+.fortnite-nav {
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 50px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  flex: 1;
+  justify-content: center;
+  margin: 0 2rem;
+  list-style: none;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+  display: block;
+  letter-spacing: 0.02em;
+}
+
+.nav-link:hover {
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+.nav-link.active {
+  color: #ff6b35;
+  text-shadow: 0 0 12px rgba(255, 107, 53, 0.4);
+  font-weight: 600;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 1000px;
+  width: 100%;
+}
+
+.hero-title {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  line-height: 0.9;
+  margin-bottom: 3rem;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-shadow: 2px 2px 4px var(--shadow-primary);
+}
+
+.hero-title-pro {
+  display: block;
+  font-weight: 400;
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+  background: linear-gradient(
+    135deg,
+    var(--color-secondary) 0%,
+    var(--color-secondary-hover) 50%,
+    var(--color-secondary) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-image {
+  margin: 3rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
+
+/* iPhone Camera Card - Following character-card pattern */
+.iphone-camera-card {
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.iphone-camera-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.iphone-camera-image {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    var(--accent-12) 0%,
+    var(--amber-10) 50%,
+    var(--accent-11) 100%
+  );
+}
+
+.iphone-camera-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* iPhone Silhouette - Following character-card pattern */
+.iphone-silhouette {
+  width: 120px;
+  height: 150px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.08) 30%,
+    rgba(255, 255, 255, 0.05) 70%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  border-radius: 60px 60px 20px 20px;
+  position: relative;
+  box-shadow: inset 0 0 25px rgba(255, 255, 255, 0.1);
+}
+
+.iphone-emoji {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.buy-button {
+  background: #0071e3;
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 100px;
+}
+
+.buy-button:hover {
+  background: #0077ed;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 113, 227, 0.3);
+}
+
+.pricing {
+  text-align: center;
+}
+
+.pricing-text {
+  font-size: 1.1rem;
+  color: #86868b;
+  font-weight: 400;
+}
+
+.pricing-text sup {
+  font-size: 0.7rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .nav-links {
+    gap: 1.5rem;
+  }
+
+  .nav-link {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 0 1rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero-section {
+    padding: 2rem 1rem;
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 10vw, 6rem);
+    margin-bottom: 2rem;
+  }
+
+  .hero-image {
+    height: 300px;
+    margin: 2rem 0;
+  }
+
+  .iphone-camera-card {
+    width: 150px;
+    height: 150px;
+  }
+
+  .iphone-camera-image {
+    background: linear-gradient(
+      135deg,
+      var(--amber-9) 0%,
+      var(--amber-10) 50%,
+      var(--amber-11) 100%
+    );
+  }
+
+  .iphone-silhouette {
+    width: 90px;
+    height: 110px;
+  }
+
+  .iphone-emoji {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 0 0.75rem;
+    height: 45px;
+  }
+
+  .hero-section {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .hero-title {
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-image {
+    height: 250px;
+  }
+
+  .iphone-camera-card {
+    width: 120px;
+    height: 120px;
+    border-radius: 20px;
+  }
+
+  .iphone-camera-image {
+    border-radius: 20px;
+    background: linear-gradient(
+      135deg,
+      var(--amber-9) 0%,
+      var(--amber-10) 50%,
+      var(--amber-11) 100%
+    );
+  }
+
+  .iphone-silhouette {
+    width: 80px;
+    height: 100px;
+  }
+
+  .iphone-emoji {
+    font-size: 1.8rem;
+    top: 15px;
+  }
+
+  .buy-button {
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .pricing-text {
+    font-size: 1rem;
+  }
+
+  .social-links {
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+  }
+
+  .social-link {
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.9);
+  }
+
+  .social-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.footer {
+  padding: 2rem;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-primary);
+  margin-top: auto;
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.01) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(255, 255, 255, 1);
+  position: relative;
+  overflow: hidden;
+  color: #1a1a1a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.social-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--social-color, #333333);
+  border-radius: inherit;
+  transition: all 0.3s ease;
+  opacity: 0;
+  z-index: 0;
+}
+
+.social-link:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px var(--social-hover-shadow, rgba(0, 0, 0, 0.4)),
+    0 0 20px var(--social-color, rgba(255, 255, 255, 0.3));
+  border-color: var(--social-color, #333333);
+  color: #ffffff;
+  background: var(--social-color, #333333);
+}
+
+.social-link:hover::before {
+  opacity: 1;
+}
+
+.social-link:active {
+  transform: translateY(-1px) scale(1.02);
+  transition: all 0.1s ease;
+}
+
+.social-icon {
+  width: 22px;
+  height: 22px;
+  stroke-width: 2;
+  transition: all 0.3s ease;
+  z-index: 1;
+  position: relative;
+}
+
+.social-link:hover .social-icon {
+  transform: scale(1.1);
+}
+
+.social-name {
+  display: none;
+}
+
+/* Basic responsive utilities */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2rem 1rem;
+  }
+
+  .social-links {
+    gap: 1rem;
+    padding: 0.75rem 0;
+  }
+
+  .social-link {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 2px solid rgba(255, 255, 255, 0.95);
+  }
+
+  .social-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
