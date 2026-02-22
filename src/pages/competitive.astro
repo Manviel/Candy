@@ -1,13 +1,9 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.jsx';
 import Competitive from '../components/Competitive.jsx';
-
+import Layout from '../layouts/Layout.astro';
 import '../styles/competitive.css';
 ---
 
 <Layout title='Competitive - Tournaments & Rankings' lang='en'>
-  <Header activeRoute='/competitive' client:load />
-
   <Competitive client:load />
 </Layout>

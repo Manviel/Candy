@@ -1,0 +1,32 @@
+D:\code\Candy\biome.json:43:4 deserialize ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Found an unknown key `include`.
+  
+    41 │ 	"overrides": [
+    42 │ 		{
+  > 43 │ 			"include": [
+       │ 			^^^^^^^^^
+    44 │ 				"*.astro"
+    45 │ 			],
+  
+  i Known keys:
+  
+  - includes
+  - javascript
+  - json
+  - css
+  - graphql
+  - grit
+  - html
+  - formatter
+  - linter
+  - assist
+  - files
+  - plugins
+  
+
+configuration ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Biome exited because the configuration resulted in errors. Please fix them.
+  
+

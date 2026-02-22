@@ -1,10 +1,10 @@
 import eslint from '@eslint/js';
-import eslintPluginAstro from 'eslint-plugin-astro';
-import react from 'eslint-plugin-react';
-import reactHooks from 'eslint-plugin-react-hooks';
-import jsxA11y from 'eslint-plugin-jsx-a11y';
 import typescript from '@typescript-eslint/eslint-plugin';
 import typescriptParser from '@typescript-eslint/parser';
+import eslintPluginAstro from 'eslint-plugin-astro';
+import jsxA11y from 'eslint-plugin-jsx-a11y';
+import react from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
 
 export default [
   // Base JavaScript rules
@@ -19,20 +19,20 @@ export default [
         ecmaVersion: 'latest',
         sourceType: 'module',
         ecmaFeatures: {
-          jsx: true,
-        },
-      },
+          jsx: true
+        }
+      }
     },
     plugins: {
-      '@typescript-eslint': typescript,
+      '@typescript-eslint': typescript
     },
     rules: {
       ...typescript.configs.recommended.rules,
       // Relax some TypeScript rules for React/Astro projects
       '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
       '@typescript-eslint/explicit-function-return-type': 'off',
-      '@typescript-eslint/explicit-module-boundary-types': 'off',
-    },
+      '@typescript-eslint/explicit-module-boundary-types': 'off'
+    }
   },
 
   // React support for .jsx files
@@ -41,8 +41,8 @@ export default [
     languageOptions: {
       parserOptions: {
         ecmaFeatures: {
-          jsx: true,
-        },
+          jsx: true
+        }
       },
       globals: {
         window: 'readonly',
@@ -55,13 +55,13 @@ export default [
         module: 'readonly',
         require: 'readonly',
         global: 'readonly',
-        React: 'readonly',
-      },
+        React: 'readonly'
+      }
     },
     plugins: {
       react: react,
       'react-hooks': reactHooks,
-      'jsx-a11y': jsxA11y,
+      'jsx-a11y': jsxA11y
     },
     rules: {
       ...react.configs.recommended.rules,
@@ -71,13 +71,13 @@ export default [
       'react/react-in-jsx-scope': 'off', // Not needed in React 17+
       'react/prop-types': 'warn', // Use TypeScript for prop validation instead
       'react-hooks/rules-of-hooks': 'error',
-      'react-hooks/exhaustive-deps': 'warn',
+      'react-hooks/exhaustive-deps': 'warn'
     },
     settings: {
       react: {
-        version: 'detect',
-      },
-    },
+        version: 'detect'
+      }
+    }
   },
 
   // Astro support
@@ -91,8 +91,8 @@ export default [
       'no-debugger': 'error',
       'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
       'prefer-const': 'error',
-      'no-var': 'error',
-    },
+      'no-var': 'error'
+    }
   },
 
   // Ignore common directories and files
@@ -105,7 +105,7 @@ export default [
       'coverage/**',
       '*.min.js',
       '*.config.js',
-      '*.config.mjs',
-    ],
-  },
+      '*.config.mjs'
+    ]
+  }
 ];

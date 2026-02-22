@@ -1,13 +1,9 @@
 ---
+import Crew from '../components/Crew.jsx';
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.jsx';
-import Crew from '../components/Crew';
-
 import '../styles/fortnite-crew.css';
 ---
 
 <Layout title='Crew - Horror Icons Return' lang='en'>
-  <Header activeRoute='/crew' client:load />
-
   <Crew client:load />
 </Layout>

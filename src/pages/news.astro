@@ -1,13 +1,9 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.jsx';
 import News from '../components/News.jsx';
-
+import Layout from '../layouts/Layout.astro';
 import '../styles/news.css';
 ---
 
 <Layout title='News - A Terrifying New Cast of Horror Icons' lang='en'>
-  <Header activeRoute='/news' client:load />
-
   <News client:load />
 </Layout>

@@ -1,11 +1,5 @@
 # AI Assistant Guidelines & Best Practices
 
-Use Fast Node Manager to run npm commands:
-
-```
-eval "$(fnm env --use-on-cd --shell bash)"
-```
-
 ## Core Principles
 
 - **User-first**: Prioritize intent, understand before acting, provide actionable solutions
@@ -56,12 +50,16 @@ src/styles/
 - **Use prop types** or TypeScript for type safety
 - **Handle loading and error states** explicitly
 
-### Astro Components
+### Astro Guidelines & Concepts
 
-- **Prefer static generation** over server-side rendering when possible
-- **Use proper frontmatter** for metadata and imports
-- **Leverage Astro's partial hydration** for interactive components
-- **Organize by page type**: layouts, pages, components
+- **Content-driven focus**: Prioritize building content-rich websites using Astro's architecture over heavy client-side applications.
+- **Server-first rendering**: Leverage Astro's default server-side HTML rendering (zero JS by default) to optimize for fast initial load times and Time to Interactive (TTI).
+- **Fast by default**: Minimize client-side JavaScript. Only opt-in to client-side JS (using client directives like `client:load`) when absolutely necessary for interactivity.
+- **Easy to use architecture**: Utilize `.astro` files as a superset of HTML. Keep UI frameworks (like React or Vue) isolated to interactive island components.
+- **Prefer static generation** over on-demand server-side rendering when possible for maximum performance.
+- **Use proper frontmatter** for metadata, layouts, and component imports in `.astro` files.
+- **Leverage Astro's partial hydration (Islands architecture)** for interactive framework components.
+- **Organize by page type**: layouts, pages, components.
 
 ### CSS/Styling
 
@@ -95,7 +93,6 @@ src/styles/
 - [MDN Web Docs](https://developer.mozilla.org/) - Web standards reference
 - [Radix Theme](https://www.radix-ui.com/themes/docs/overview/getting-started) - Install Radix Themes and start building in minutes.
 - [Radix Primitives](https://www.radix-ui.com/primitives/docs/overview/getting-started) - A quick tutorial to get you up and running with Radix Primitives.
-- [fnm](https://github.com/Schniz/fnm?tab=readme-ov-file#bash) - Bash command
 
 ## Project-Specific Rules
 

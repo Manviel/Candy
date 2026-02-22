@@ -11,37 +11,37 @@ const Header = ({ activeRoute = '' }) => {
   };
 
   return (
-    <nav className="fortnite-nav">
-      <div className="nav-container">
+    <nav className='fortnite-nav'>
+      <div className='nav-container'>
         <NavigationMenu>
-          <NavigationMenuList className="nav-links">
+          <NavigationMenuList className='nav-links'>
             <NavigationMenuItem>
-              <NavigationMenuLink href="/" className={getNavLinkClass('/')}>
+              <NavigationMenuLink href='/' className={getNavLinkClass('/')}>
                 Home
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink href="/battle-pass" className={getNavLinkClass('/battle-pass')}>
+              <NavigationMenuLink href='/battle-pass' className={getNavLinkClass('/battle-pass')}>
                 Battle Pass
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink href="/item-shop" className={getNavLinkClass('/item-shop')}>
+              <NavigationMenuLink href='/item-shop' className={getNavLinkClass('/item-shop')}>
                 Item Shop
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink href="/news" className={getNavLinkClass('/news')}>
+              <NavigationMenuLink href='/news' className={getNavLinkClass('/news')}>
                 News
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink href="/competitive" className={getNavLinkClass('/competitive')}>
+              <NavigationMenuLink href='/competitive' className={getNavLinkClass('/competitive')}>
                 Competitive
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink href="/crew" className={getNavLinkClass('/crew')}>
+              <NavigationMenuLink href='/crew' className={getNavLinkClass('/crew')}>
                 Crew
               </NavigationMenuLink>
             </NavigationMenuItem>
