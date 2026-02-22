@@ -19,8 +19,8 @@ const socialIcons = [
 const games = [
   {
     id: 1,
-    title: 'MrParkinson +1',
-    subtitle: 'Fortnite Lego – Surviva...',
+    title: 'ZERO BUILD',
+    subtitle: 'Remember to always thank the Bus Driver.',
     gradientClass: 'gradient-green',
     joinButton: true,
     active: true,
@@ -28,29 +28,23 @@ const games = [
   },
   {
     id: 2,
-    title: 'FORTNITE\nBATTLE ROYALE',
+    title: 'BATTLE ROYALE',
     gradientClass: 'gradient-purple',
-    href: '/'
+    href: '/news'
   },
   {
     id: 3,
-    title: 'FORTNITE\nZERO BUILD',
+    title: 'Competitive +1',
     gradientClass: 'gradient-orange',
     href: '/',
     active: false
   },
   {
     id: 4,
-    title: 'LEGO FORTNITE',
+    title: 'Reload',
     gradientClass: 'gradient-blue',
     badge: '3',
     href: '/item-shop'
-  },
-  {
-    id: 5,
-    title: 'DEL MAR',
-    gradientClass: 'gradient-teal',
-    href: '/battle-pass'
   },
   {
     id: 6,

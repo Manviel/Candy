@@ -6,7 +6,7 @@ export const RightPanel = () => {
         <div className='promo-image'>🦸</div>
         <div className='promo-content'>
           <p className='promo-title'>
-            MARVEL MINIFIGS
+            New bundles
             <br />
             ARE HERE
           </p>

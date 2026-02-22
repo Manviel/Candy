@@ -1,13 +1,6 @@
 const Crew = () => {
   return (
     <div className='ios26-container'>
-      {/* iOS 26 Header */}
-      <div className='ios26-header'>
-        <div className='learn-more-link'>
-          <a href='/news'>Learn more about Fortnitemares →</a>
-        </div>
-      </div>
-
       {/* Main iOS 26 Content */}
       <main className='ios26-main'>
         <div className='ios26-hero'>

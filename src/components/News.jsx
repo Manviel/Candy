@@ -107,10 +107,6 @@ const News = () => {
         {/* More Like This Section */}
         <div className='more-like-this-section'>
           <h2 className='more-like-title'>More Like This</h2>
-          <div className='related-categories'>
-            <span className='category-tag'>Battle Royale</span>
-            <span className='category-tag'>Reload</span>
-          </div>
 
           <div className='related-articles'>
             {relatedArticles.map(article => (

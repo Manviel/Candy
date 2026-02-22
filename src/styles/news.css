@@ -235,18 +235,6 @@
   margin-bottom: 1.5rem;
 }
 
-.twitch-link {
-  color: var(--color-secondary);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.twitch-link:hover {
-  color: var(--color-secondary-hover);
-  text-decoration: underline;
-}
-
 .twitch-rewards {
   list-style: none;
   padding: 0;
@@ -272,18 +260,6 @@
 .twitch-info {
   font-size: 1rem;
   color: var(--text-muted);
-}
-
-.fortnite-link {
-  color: var(--color-secondary);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.fortnite-link:hover {
-  color: var(--color-secondary-hover);
-  text-decoration: underline;
 }
 
 /* More Like This Section */

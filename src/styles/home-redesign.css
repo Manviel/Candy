@@ -28,11 +28,13 @@
   top: -20%;
   bottom: -20%;
   width: 3px;
-  background: linear-gradient(to bottom,
-      transparent 0%,
-      rgba(147, 51, 234, 0.9) 40%,
-      rgba(100, 20, 200, 0.9) 60%,
-      transparent 100%);
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(147, 51, 234, 0.9) 40%,
+    rgba(100, 20, 200, 0.9) 60%,
+    transparent 100%
+  );
   box-shadow:
     0 0 30px 8px rgba(147, 51, 234, 0.4),
     0 0 60px 20px rgba(100, 20, 200, 0.15);
@@ -348,16 +350,18 @@
   left: 0;
   right: 0;
   padding: 1.5rem 0.75rem 0.625rem;
-  background: linear-gradient(to top,
-      rgba(0, 0, 0, 0.92) 0%,
-      rgba(0, 0, 0, 0.3) 60%,
-      transparent 100%);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.92) 0%,
+    rgba(0, 0, 0, 0.3) 60%,
+    transparent 100%
+  );
 }
 
 .game-card-title {
   font-family: "Arial Black", sans-serif;
   font-weight: 900;
-  font-size: 0.9rem;
+  font-size: 1.25rem;
   text-transform: uppercase;
   font-style: italic;
   line-height: 1.15;
@@ -366,9 +370,8 @@
 }
 
 .game-card-subtitle {
-  font-size: 0.65rem;
-  opacity: 0.75;
-  margin-top: 2px;
+  font-size: 0.875rem;
+  margin-top: 6px;
   color: white;
 }
 
@@ -380,7 +383,7 @@
   backdrop-filter: blur(4px);
   padding: 3px 8px;
   border-radius: 10px;
-  font-size: 0.7rem;
+  font-size: 1rem;
   font-weight: 700;
   color: white;
 }
@@ -393,7 +396,7 @@
   color: white;
   padding: 3px 10px;
   border-radius: 10px;
-  font-size: 0.7rem;
+  font-size: 1rem;
   font-weight: 800;
   letter-spacing: 0.05em;
 }
@@ -432,7 +435,6 @@
   left: 50%;
   transform: translateX(-50%);
   width: fit-content;
-  min-width: 680px;
   height: 52px;
   display: flex;
   justify-content: space-between;
@@ -459,24 +461,6 @@
 
 .fn-header-right {
   flex: 0 0 auto;
-}
-
-.fn-home-btn {
-  display: inline-flex;
-  gap: 10px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  color: white;
-  padding: 7px 14px;
-  border-radius: 20px;
-  align-items: center;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.fn-home-btn:hover {
-  background: rgba(255, 255, 255, 0.25);
 }
 
 .fn-header-center {
@@ -643,6 +627,7 @@
   position: absolute;
   top: 10px;
   right: 1.5rem;
+  text-decoration: none;
 }
 
 .fn-avatar-standalone:hover {
