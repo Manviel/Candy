@@ -1,54 +1,62 @@
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList
-} from '@radix-ui/react-navigation-menu';
+import { Home as HomeIcon, Menu, Search } from 'lucide-react';
+import '../styles/home-redesign.css';
 
 const Header = ({ activeRoute = '' }) => {
-  const getNavLinkClass = route => {
-    return `nav-link${activeRoute === route ? ' active' : ''}`;
-  };
-
   return (
-    <nav className='fortnite-nav'>
-      <div className='nav-container'>
-        <NavigationMenu>
-          <NavigationMenuList className='nav-links'>
-            <NavigationMenuItem>
-              <NavigationMenuLink href='/' className={getNavLinkClass('/')}>
-                Home
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink href='/battle-pass' className={getNavLinkClass('/battle-pass')}>
-                Battle Pass
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink href='/item-shop' className={getNavLinkClass('/item-shop')}>
-                Item Shop
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink href='/news' className={getNavLinkClass('/news')}>
-                News
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink href='/competitive' className={getNavLinkClass('/competitive')}>
-                Competitive
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink href='/crew' className={getNavLinkClass('/crew')}>
-                Crew
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
+    <>
+      {/* Floating glass pill HUD — center only */}
+      <nav className='fn-header'>
+        <div className='fn-header-left'>
+          <div className='fn-home-btn'>
+            <HomeIcon size={18} strokeWidth={2.5} />
+            <Menu size={18} strokeWidth={2.5} />
+          </div>
+        </div>
+
+        <div className='fn-header-center'>
+          <button type='button' className='fn-search-btn'>
+            <Search size={20} strokeWidth={2.5} />
+          </button>
+
+          <div className='fn-nav-tabs'>
+            <a href='/' className={`fn-tab ${activeRoute === '/' ? 'active' : ''}`}>
+              DISCOVER
+            </a>
+            <a
+              href='/battle-pass'
+              className={`fn-tab ${activeRoute === '/battle-pass' ? 'active' : ''}`}
+            >
+              LIBRARY
+            </a>
+            <div className='fn-divider' />
+            <a
+              href='/item-shop'
+              className={`fn-tab ${activeRoute === '/item-shop' ? 'active' : ''}`}
+            >
+              ITEM SHOP <span className='fn-badge'>0</span>
+            </a>
+            <a href='/crew' className={`fn-tab ${activeRoute === '/crew' ? 'active' : ''}`}>
+              CREW
+            </a>
+          </div>
+
+          <div className='fn-vbucks'>
+            <div className='vbucks-icon'>V</div>
+            <span>1,800</span>
+          </div>
+        </div>
+
+        <div className='fn-header-right'>
+          {/* intentionally empty — avatar is outside the pill */}
+        </div>
+      </nav>
+
+      {/* Avatar sits independently in top-right corner */}
+      <div className='fn-avatar-standalone'>
+        🎭
+        <div className='fn-status-dot' />
       </div>
-    </nav>
+    </>
   );
 };
 

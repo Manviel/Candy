@@ -19,9 +19,8 @@ Make sure you have Node.js and `npm` installed.
 
 ### Installation
 
-1. Clone the repository and navigate to the project directory:
+1. Navigate to the project directory:
    ```bash
-   git clone <repository-url>
    cd Candy
    ```
 
